@@ -6,6 +6,7 @@ summaryLength = 15
 paginate = 5
 disqusShortname = "doogo"
 copyright = "Unless explicitly stated, all content released here are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0)."
+theme = "terminal-plus-minus"
 
 [author]
     name = "John Dodo"

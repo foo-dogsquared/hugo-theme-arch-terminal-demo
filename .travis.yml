@@ -21,3 +21,4 @@ deploy:
   on:
     branch: 
       - demo
+      - master

@@ -1,4 +1,4 @@
-baseURL = "https://foo-dogsquared.github.io/"
+baseURL = "https://foo-dogsquared.github.io/hugo-theme-terminal-plus-minus-demo/"
 languageCode = "en-us"
 title = "Terminal Plus-Minus"
 description = "Generic description!"

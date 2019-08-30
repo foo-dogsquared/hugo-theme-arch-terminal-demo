@@ -1,0 +1,25 @@
+{{ $global := resources.Get "js/toggle-node.js" | minify }}
+
+{{- if $.Site.Params.enableSyntaxHighlighting -}}
+    {{- if (eq $.Site.Params.syntaxHighlighter "prismjs") }}
+        {{ $highlighter := resources.Get "js/lib/prism.js" }}
+        {{ $highlighterStyle := resources.Get "css/prism.css" | minify }}
+
+        <link rel="stylesheet" href="{{ $highlighterStyle.Permalink }}">
+        <script type="text/javascript" src="{{ $highlighter.Permalink }}"></script>
+    {{- else -}}
+        {{ $highlighter := resources.Get "js/lib/highlight.pack.js" }}
+        {{ $highlighterStyle := resources.Get "css/highlightjs.css" | minify }}
+    
+        <link rel="stylesheet" href="{{ $highlighterStyle.Permalink }}">
+        <script type="text/javascript" src="{{ $highlighter.Permalink }}"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    {{- end -}}
+{{- end -}}
+
+<!-- MathJax -->
+{{ partial "config/mathjax.html" . }}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js?config=TeX-MML-AM_CHTML" async></script>
+
+<!-- The custom script -->
+<script type="text/javascript" src="{{ $global.Permalink }}"></script>

@@ -1,0 +1,8 @@
+---
+title: "Home"
+date: 2019-08-23T00:21:52+08:00
+---
+
+= Hello!
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum porta lacus vel ullamcorper. Cras ornare sed odio ut faucibus. Fusce tristique enim vitae ullamcorper hendrerit. Suspendisse efficitur risus tortor, vel tincidunt odio euismod sit amet. Proin porta risus at ligula posuere, id efficitur lacus aliquet. 

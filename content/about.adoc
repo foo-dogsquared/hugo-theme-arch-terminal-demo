@@ -1,0 +1,31 @@
+---
+title: "About"
+date: 2019-08-27T00:00:26+08:00
+---
+
+= About
+
+Hey! 
+This is Terminal Plus-Minus, a https://gohugo.io/[Hugo] theme 
+based from https://github.com/panr/hugo-theme-terminal[original Terminal] 
+originally developed by https://github.com/panr/[panr].
+
+It is basically a recreation of the original theme with the following 
+added/removed features:
+
+* Focused support for https://asciidoctor.org/[Asciidoctor]-based content. 
+* Additional configurable features.
+* Removal of https://nodejs.org/[NodeJS] dependencies through the use of 
+https://gohugo.io/hugo-pipes/bundling/[Hugo asset bundling].
+
+If you're interested in trying this theme, you can visit the 
+https://github.com/foo-dogsquared/hugo-theme-terminal-plus-minus[GitHub repo] for 
+more information.
+Feel free to file an issue for requesting features or bug reports and create 
+a pull request.
+
+You could also see the 
+https://gitlab.com/foo-dogsquared/hugo-theme-terminal-plus-minus[GitLab mirror] if 
+you're mainly using GitLab.
+
+This theme is currently maintained by https://foo-dogsquared.github.io/[@foo-dogsquared]. 

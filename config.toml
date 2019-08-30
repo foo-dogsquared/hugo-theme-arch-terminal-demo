@@ -1,0 +1,69 @@
+baseURL = "https://foo-dogsquared.github.io/"
+languageCode = "en-us"
+title = "Terminal Plus-Minus"
+description = "Generic description!"
+summaryLength = 15
+paginate = 5
+disqusShortname = "doogo"
+copyright = "Unless explicitly stated, all content released here are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0)."
+
+[author]
+    name = "John Dodo"
+    alias = "ordinary-extinction"
+    email = "johndodo@example.com"
+
+[menu]
+    [[menu.main]]
+        identifier = "articles"
+        name = "Articles"
+        url = "articles/"
+
+    [[menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "about/"
+
+    [[menu.main]]
+        identifier = "archives"
+        name = "Archives"
+        url = "archives/"
+
+    [[menu.main]]
+        identifier = "rss"
+        name = "RSS"
+        url = "index.xml/"
+
+[params]
+    # The subtitle of the blog. Mostly appears in the <title> tag.
+    subtitle = "Blogger"
+    keywords = ["John Dodo", "ordinary-extinction", "blog"]
+
+    # The tagline that'll appear in the homepage as the first header. 
+    tagline = "Making near destructive blogs all around the world."
+    
+    mainSection = ["posts"]
+    
+    # Show posts on home. :)
+    showPostsOnHome = true
+    
+    # Indicates if the site sections should be listed instead.
+    # Requires `showPostsOnHome` to be enabled.
+    # listSiteSectionsOnHome = true 
+
+    # Enables syntax highlighting. ;p
+    enableSyntaxHighlighting = true
+
+    # Set the syntax highlighter to be used. 
+    # Only valid options are "highlighterjs" or "prismjs".
+    # By default, it uses highlighter.js as the syntax highlighter if there's no set value. 
+    syntaxHighlighter = "prismjs"
+    
+    # Indicates to show the icon whether the link leads to a page or a section. 
+    # The effect is visible if `showPostsOnHome` is at least enabled. 
+    showPageTypeIcon = true
+    
+    # Shows breadcrumbs in the post.
+    enableBreadcrumbs = true
+
+    # Indicates if certain headers have to be styled.
+    contentIsStyled = true

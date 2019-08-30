@@ -1,0 +1,23 @@
+dist: bionic
+language: generic
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install python3
+  - sudo apt-get install ruby
+  # Assuming that the GitHub API is at version 4.0
+  - curl https://api.github.com/repos/gohugoio/hugo/releases/latest | grep "hugo_extended.*deb" | grep "browser_download_url" | cut --delimiter=":" --delimiter="\"" --fields=4 | wget -qi -
+  - sudo dpkg -i hugo*.deb
+  - sudo gem install asciidoctor
+script:
+  - asciidoctor --version
+  - hugo
+deploy:
+  local_dir: "public/"
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  target_branch: gh-pages
+  on:
+    branch: 
+      - demo

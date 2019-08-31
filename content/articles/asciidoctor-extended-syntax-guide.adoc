@@ -1,7 +1,6 @@
 ---
 title: "Asciidoctor Extended Syntax Guide"
 date: 2019-08-29T22:09:16+08:00
-draft: true
 
 categories:
     - "asciidoctor"

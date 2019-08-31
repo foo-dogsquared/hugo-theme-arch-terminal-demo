@@ -1,7 +1,6 @@
 ---
 title: "MathJax Support for Asciidoctor"
 date: 2019-08-28T01:47:02+08:00
-draft: true
 
 categories:
     - "asciidoctor"

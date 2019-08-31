@@ -1,0 +1,23 @@
+= Terminal Plus-Minus
+
+This is a demo of the 
+https://github.com/foo-dogsquared/hugo-theme-terminal-plus-minus/[Hugo Terminal Plus-Minus theme]. 
+
+It serves as a real-life example of using the theme. 
+In this example, the theme is installed with `git clone` since 
+I don't really want to make some changes (yet...).
+
+(Maybe I'll customize it a bit further to get a closer real-life example.)
+
+Be sure to take a look with the 
+https://github.com/foo-dogsquared/hugo-theme-terminal-plus-minus-demo/blob/master/config.toml[site config file] 
+to get an idea. 
+I've also made sure that the config is also well-commented. 
+
+It contains some content files mostly testing the rendering of 
+Markdown and Asciidoctor content. 
+
+It also features https://travis-ci.org/[Travis CI] as a tool 
+for deploying your Hugo site. 
+Feel free to take a look and steal it as an example. 
+

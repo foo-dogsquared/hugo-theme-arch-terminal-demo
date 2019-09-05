@@ -11,12 +11,21 @@ based from https://github.com/panr/hugo-theme-terminal[original Terminal]
 originally developed by https://github.com/panr/[panr].
 
 It is basically a recreation of the original theme with the following 
-added/removed features:
+new and improved features:
 
 * Focused support for https://asciidoctor.org/[Asciidoctor]-based content. 
-* Additional configurable features.
 * Removal of https://nodejs.org/[NodeJS] dependencies through the use of 
-https://gohugo.io/hugo-pipes/bundling/[Hugo asset bundling].
+https://gohugo.io/hugo-pipes/bundling/[Hugo asset bundling]. 
+* Easier configuration for site appearance 
+* Using as a single homepage theme 
+* Using as a blogging theme 
+* Even using as both single homepage with a blog 
+* Static site engine widget (not recommended for large sites)
+* Support for RSS, Atom, and JSON feeds 
+* MathJax support 
+* Theme toggle (AKA dark mode)
+* Site breadcrumbs 
+* Customizable social links 
 
 If you're interested in trying this theme, you can visit the 
 https://github.com/foo-dogsquared/hugo-theme-terminal-plus-minus[GitHub repo] for 
@@ -28,4 +37,8 @@ You could also see the
 https://gitlab.com/foo-dogsquared/hugo-theme-terminal-plus-minus[GitLab mirror] if 
 you're mainly using GitLab.
 
-This theme is currently maintained by https://foo-dogsquared.github.io/[@foo-dogsquared]. 
+This theme is created and currently maintained by 
+https://foo-dogsquared.github.io/[@foo-dogsquared]. 
+He also uses this theme for https://foo-dogsquared.github.io/blog/[his blog] 
+and https://foo-dogsquared.github.io/[web portfolio], obviously. 
+I guess you could say he's dogfooding. 

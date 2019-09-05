@@ -8,6 +8,36 @@ disqusShortname = "doogo"
 copyright = "Unless explicitly stated, all content released here are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0)."
 theme = "terminal-plus-minus"
 
+[mediaTypes]
+    [mediaTypes."application/atom+xml"]
+        suffixes = ["atom"]
+    
+    [mediaTypes."application/rss+xml"]
+        suffixes = ["rss"]
+    
+    [mediaTypes."x-application/search+json"]
+        suffixes = ["search.json"]
+
+[outputFormats]
+    [outputFormats.RSS]
+        mediaType = "application/rss+xml"
+        baseName = "index"
+        isPlainText = false
+        
+    [outputFormats.Atom]
+        mediaType = "application/atom+xml"
+        baseName = "index"
+        isPlainText = false
+    
+    [outputFormats.SearchIndex]
+        mediaType = "x-application/search+json"
+        baseName = "index"
+        isPlainText = false
+
+[outputs]
+    home = ["HTML", "RSS", "ATOM", "JSON", "SEARCHINDEX"]
+    section = ["HTML", "RSS", "ATOM", "JSON"]
+
 [author]
     name = "John Dodo"
     alias = "ordinary-extinction"
@@ -30,9 +60,9 @@ theme = "terminal-plus-minus"
         url = "archives/"
 
     [[menu.main]]
-        identifier = "rss"
-        name = "RSS"
-        url = "index.xml/"
+        identifier = "feeds"
+        name = "Feeds"
+        url = "feeds/"
 
 [params]
     # The subtitle of the blog. Mostly appears in the <title> tag.
@@ -68,3 +98,15 @@ theme = "terminal-plus-minus"
 
     # Indicates if certain headers have to be styled.
     contentIsStyled = true
+
+    # Enable theme toggle (dark mode for some)
+    enableThemeToggle = true
+
+    # Enable MathJax support
+    enableMathjax = true
+
+    # Use MathJax V3
+    # setMathjaxToV3 = true
+
+    # Enable client-side search engine 
+    enableSiteSearch = true

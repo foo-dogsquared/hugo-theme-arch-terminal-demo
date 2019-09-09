@@ -1,12 +1,11 @@
-baseURL = "https://foo-dogsquared.github.io/hugo-theme-terminal-plus-minus-demo/"
+baseURL = "https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/"
 languageCode = "en-us"
-title = "Terminal Plus-Minus"
+title = "Arch Terminal"
 description = "Generic description!"
 summaryLength = 15
 paginate = 5
-disqusShortname = "doogo"
 copyright = "Unless explicitly stated, all content released here are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0)."
-theme = "terminal-plus-minus"
+theme = "arch-terminal"
 
 [mediaTypes]
     [mediaTypes."application/atom+xml"]
@@ -22,17 +21,14 @@ theme = "terminal-plus-minus"
     [outputFormats.RSS]
         mediaType = "application/rss+xml"
         baseName = "index"
-        isPlainText = false
         
     [outputFormats.Atom]
         mediaType = "application/atom+xml"
         baseName = "index"
-        isPlainText = false
     
     [outputFormats.SearchIndex]
         mediaType = "x-application/search+json"
         baseName = "index"
-        isPlainText = false
 
 [outputs]
     home = ["HTML", "RSS", "ATOM", "JSON", "SEARCHINDEX"]
@@ -71,15 +67,18 @@ theme = "terminal-plus-minus"
 
     # The tagline that'll appear in the homepage as the first header. 
     tagline = "Making near destructive blogs all around the world."
-    
-    mainSection = ["posts"]
-    
+        
     # Show posts on home. :)
     showPostsOnHome = true
     
     # Indicates if the site sections should be listed instead.
     # Requires `showPostsOnHome` to be enabled.
     # listSiteSectionsOnHome = true 
+
+    # Improve SEO capabilities
+    enableTwitterCard = true
+    enableOpenGraphSchema = true 
+    enableJsonLdSchema = true
 
     # Enables syntax highlighting. ;p
     enableSyntaxHighlighting = true
@@ -97,7 +96,7 @@ theme = "terminal-plus-minus"
     enableBreadcrumbs = true
 
     # Indicates if certain headers have to be styled.
-    contentIsStyled = true
+    # contentIsStyled = true
 
     # Enable theme toggle (dark mode for some)
     enableThemeToggle = true
@@ -105,8 +104,14 @@ theme = "terminal-plus-minus"
     # Enable MathJax support
     enableMathjax = true
 
-    # Use MathJax V3
-    # setMathjaxToV3 = true
+    # Use MathJax V2
+    # setMathjaxToV2 = true
 
     # Enable client-side search engine 
     enableSiteSearch = true
+
+    # Enable content reader mode
+    enableContentReaderMode = true 
+
+    # Enable compact mode for the list templates
+    enableCompactListMode = true

@@ -1,0 +1,38 @@
+[
+    {
+        "id": "reddit",
+        "url": "https://www.reddit.com/search/?q=${{__DATA__}}"
+    },
+    {
+        "id": "github",
+        "url": "https://github.com/search?q=${{__DATA__}}"
+    },
+    {
+        "id": "pinboard",
+        "url": "https://pinboard.in/search/?query=${{__DATA__}}"
+    },
+    {
+        "id": "stackexchange",
+        "url": "https://stackexchange.com/search?q=${{__DATA__}}"
+    },
+    {
+        "id": "hackernews",
+        "url": "https://hn.algolia.com/?query=${{__DATA__}}"
+    },
+    {
+        "id": "youtube",
+        "url": "https://youtube.com/results?q=${{__DATA__}}"
+    },
+    {
+        "id": "duckduckgo",
+        "url": "https://duckduckgo.com/?q=${{__DATA__}}"
+    },
+    {
+        "id": "arxiv",
+        "url": "https://arxiv.org/search/?query=${{__DATA__}}&searchtype=all"
+    },
+    {
+        "id": "archive",
+        "url": "https://archive.org/search.php?query=${{__DATA__}}"
+    }
+]

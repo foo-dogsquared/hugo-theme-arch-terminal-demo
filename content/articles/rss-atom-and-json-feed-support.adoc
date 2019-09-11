@@ -5,10 +5,13 @@ aliases:
     - "/feeds/"
 
 categories:
-    - "category1"
+    - "guide"
 tags: 
-    - "tag1"
-    - "tag2"
+    - "rss"
+    - "atom"
+    - "json"
+    - "feeds"
+    - "guide"
 ---
 
 = RSS, Atom, and JSON Feed Support

@@ -20,6 +20,11 @@ https://gohugo.io/hugo-pipes/bundling/[Hugo asset bundling].
 * Using as a single homepage theme 
 * Using as a blogging theme 
 * Even using as both single homepage with a blog 
+
+This theme is made for performance and minimalism but you can make it 
+bloated if you want. 
+Here are the following features you can stick to this theme: 
+
 * Static site engine widget (not recommended for large sites)
 * Support for RSS, Atom, and JSON feeds 
 * MathJax support 
@@ -35,7 +40,11 @@ a pull request.
 
 You could also see the 
 https://gitlab.com/foo-dogsquared/hugo-theme-terminal-plus-minus[GitLab mirror] if 
-you're mainly using GitLab.
+you're mainly using GitLab. 
+
+You can also visit the 
+https://github.com/foo-dogsquared/hugo-theme-terminal-plus-minus-demo[GitHub repo] 
+of this demo, clone it, and experiment with the settings. 
 
 This theme is created and currently maintained by 
 https://foo-dogsquared.github.io/[@foo-dogsquared]. 

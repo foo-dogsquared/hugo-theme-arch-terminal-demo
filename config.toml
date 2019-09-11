@@ -1,7 +1,6 @@
 baseURL = "https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/"
 languageCode = "en-us"
 title = "Arch Terminal"
-description = "Generic description!"
 summaryLength = 15
 paginate = 5
 copyright = "Unless explicitly stated, all content released here are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0)."
@@ -13,9 +12,6 @@ theme = "arch-terminal"
     
     [mediaTypes."application/rss+xml"]
         suffixes = ["rss"]
-    
-    [mediaTypes."x-application/search+json"]
-        suffixes = ["search.json"]
 
 [outputFormats]
     [outputFormats.RSS]
@@ -25,13 +21,9 @@ theme = "arch-terminal"
     [outputFormats.Atom]
         mediaType = "application/atom+xml"
         baseName = "index"
-    
-    [outputFormats.SearchIndex]
-        mediaType = "x-application/search+json"
-        baseName = "index"
 
 [outputs]
-    home = ["HTML", "RSS", "ATOM", "JSON", "SEARCHINDEX"]
+    home = ["HTML", "RSS", "ATOM", "JSON"]
     section = ["HTML", "RSS", "ATOM", "JSON"]
 
 [author]
@@ -68,12 +60,15 @@ theme = "arch-terminal"
     # The tagline that'll appear in the homepage as the first header. 
     tagline = "Making near destructive blogs all around the world."
         
-    # Show posts on home. :)
-    showPostsOnHome = true
+    # Hide posts on home. :)
+    # hidePostsOnHome = true
     
     # Indicates if the site sections should be listed instead.
     # Requires `showPostsOnHome` to be enabled.
     # listSiteSectionsOnHome = true 
+
+    # Enable content pagination
+    # enableContentPagination = true
 
     # Improve SEO capabilities
     enableTwitterCard = true
@@ -81,12 +76,12 @@ theme = "arch-terminal"
     enableJsonLdSchema = true
 
     # Enables syntax highlighting. ;p
-    enableSyntaxHighlighting = true
+    # enableLazySyntaxHighlighting = true
 
     # Set the syntax highlighter to be used. 
     # Only valid options are "highlighterjs" or "prismjs".
     # By default, it uses highlighter.js as the syntax highlighter if there's no set value. 
-    syntaxHighlighter = "prismjs"
+    # syntaxHighlighter = "prismjs"
     
     # Indicates to show the icon whether the link leads to a page or a section. 
     # The effect is visible if `showPostsOnHome` is at least enabled. 
@@ -108,7 +103,7 @@ theme = "arch-terminal"
     # setMathjaxToV2 = true
 
     # Enable client-side search engine 
-    enableSiteSearch = true
+    # enableSiteSearch = true
 
     # Enable content reader mode
     enableContentReaderMode = true 

@@ -1,0 +1,111 @@
+---
+title: "Adding Your Own JS Libraries"
+date: 2019-09-10T15:26:52+08:00
+
+categories:
+    - "guide"
+tags: 
+    - "javascript"
+    - "guide"
+---
+
+= Adding Your Own JS Libraries
+Gabriel Arazas <foo.dogsquared@gmail.com>
+2019-09-10
+:stem: latexmath
+
+
+== Adding it sitewide
+
+This theme allows you to quickly include your own set of third-party 
+(or your own) libraries on the whole site by providing a 
+https://gohugo.io/templates/data-templates/#data-files-in-themes[data file] 
+named `libraries` (i.e. `libraries.json`, `libraries.yaml`, `libraries.toml`) 
+in your data folder. 
+
+The data `libraries` should hold a list of objects with specific keys. 
+
+Here's the keys/fields that the theme looks for:
+
+[cols="4*",options="header"]
+|===
+| Key 
+| Data type 
+| Description 
+| Optional 
+
+| `type` 
+| string 
+| Describes whether it's a CSS or JS library. 
+Only accepts possible values: `js` and `css`. 
+| 
+
+| `url`
+| string 
+| The URL of the script to be referred. 
+Accepts absolute URL (such as CDN links) and relative 
+links (such as the scripts in the static folder). 
+| 
+
+| `weight`
+| number 
+| Indicates the precedence of the script. 
+The less weight value, the higher the precedence so any 
+important scripts should have the least weight value. 
+| 
+
+| `sync` 
+| boolean 
+| Includes the script to be a part of the DOM rendering, 
+bringing down the 
+https://developers.google.com/web/fundamentals/performance/rail#ux[perceived page performance]. 
+| Yes 
+
+| `defer` 
+| boolean 
+| Makes the script to be deferred. 
+Once the field value is `true`, the script will be deferred no matter what. 
+| Yes 
+
+|===
+
+As you might tell, the scripts will be delivered asynchronously (with the 
+`async` attribute) by default. 
+
+If you want finer control with how the scripts are delivered, I recommend 
+to modify the script partial (at `theme/$THEME_NAME/layouts/partials/script.html`). 
+
+
+
+
+== Adding scripts for a specific post 
+
+TIP: If you plan on future-proofing your content, I recommend to 
+embed it on the document itself than relying on the frontmatter since this is 
+a theme-specific feature and may present some problems if you migrate it somewhere else. 
+For Markdown, you can simply write raw HTML with it. 
+On Asciidoctor, you can simply embed it with a 
+https://asciidoctor.org/docs/user-manual/#passthroughs[passthrough block]. 
+You also gain finer control on embedding your scripts this way. 
+
+In order to add specific JS libraries, you need the `libs` object in the frontmatter. 
+It should hold an object named `js` where it holds an array of URLs of the libraries. 
+
+Let's say you're writing a post on https://p5js.org/[p5.js]. 
+You can include it in the frontmatter like the following: 
+
+[source,yaml]
+----
+---
+title: "Trying out p5.js"
+date: 2019-09-10T15:26:52+08:00
+
+libs:
+    js:
+        - https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js
+---
+----
+
+Take note that scripts loaded this way are executed first before the sitewide libraries and 
+linked with `async` attribute. 
+If you want finer control, I recommend to embed them into the document itself. 

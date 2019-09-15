@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Arch Terminal</title>
+    <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/</link>
+    <description>Recent content in Tags on Arch Terminal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>johndodo@example.com (John Dodo)</managingEditor>
+    <webMaster>johndodo@example.com (John Dodo)</webMaster>
+    <copyright>Unless explicitly stated, all content released here are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0).</copyright>
+    <lastBuildDate>Tue, 10 Sep 2019 15:26:52 +0800</lastBuildDate>
+    <docs>https://cyber.harvard.edu/rss/rss.html</docs>
+    
+        <atom:link href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/index.rss" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>guide</title>
+      <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/guide/</link>
+      <pubDate>Tue, 10 Sep 2019 15:26:52 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/guide/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/javascript/</link>
+      <pubDate>Tue, 10 Sep 2019 15:26:52 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>atom</title>
+      <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/atom/</link>
+      <pubDate>Wed, 04 Sep 2019 17:22:44 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/atom/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>feeds</title>
+      <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/feeds/</link>
+      <pubDate>Wed, 04 Sep 2019 17:22:44 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/feeds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>json</title>
+      <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/json/</link>
+      <pubDate>Wed, 04 Sep 2019 17:22:44 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rss</title>
+      <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/rss/</link>
+      <pubDate>Wed, 04 Sep 2019 17:22:44 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/rss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>asciidoctor</title>
+      <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/asciidoctor/</link>
+      <pubDate>Thu, 29 Aug 2019 22:09:16 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/asciidoctor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emoji</title>
+      <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/emoji/</link>
+      <pubDate>Wed, 28 Aug 2019 12:11:22 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/emoji/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mathjax</title>
+      <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/mathjax/</link>
+      <pubDate>Wed, 28 Aug 2019 01:47:02 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/mathjax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/markdown/</link>
+      <pubDate>Wed, 28 Aug 2019 00:09:56 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

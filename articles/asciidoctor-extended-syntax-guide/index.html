@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asciidoctor Extended Syntax Guide :: Arch Terminal — Blogger</title>
+
+<meta name="author" content="John Dodo">
+<meta name="application-name" content="Arch Terminal">
+<meta name="description" content="The purpose of this article to make sure not-so-common features of Asciidoctor (i.e. admonition blocks, callouts) are styled and fit to the theme.">
+<meta name="robots" content="noodp"/>
+<meta name="generator" content="Hugo 0.58.2" />
+<meta name="referrer" content="no-referrer" />
+<meta name="format-detection" content="telephone=no">
+<meta name="keywords" content="John Dodo, ordinary-extinction, blog">
+<link rel="noopener me" href="https://github.com/foo-dogsquared/" />
+<link rel="noopener me" href="https://keybase.io/foo_dogsquared" />
+<link rel="noopener me" href="https://twitter.com/foo_dogsquared" />
+
+<link rel="canonical" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/asciidoctor-extended-syntax-guide/" />
+
+
+<link rel="icon" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/logo.png" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Asciidoctor Extended Syntax Guide" />
+<meta name="twitter:description" content="The purpose of this article to make sure not-so-common features of Asciidoctor (i.e. admonition blocks, callouts) are styled and fit to the theme." />
+<meta name="twitter:site" content="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/" />
+<meta name="twitter:creator" content="John Dodo" />
+<meta name="twitter:image" content="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/logo.png">
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en" />
+<meta property="og:name" content="John Dodo" />
+<meta property="og:title" content="Asciidoctor Extended Syntax Guide" />
+<meta property="og:url" content="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/" />
+<meta property="og:site_name" content="Arch Terminal" />
+<meta property="og:description" content="The purpose of this article to make sure not-so-common features of Asciidoctor (i.e. admonition blocks, callouts) are styled and fit to the theme." />
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/foo-dogsquared.github.io\/hugo-theme-arch-terminal-demo\/articles\/asciidoctor-extended-syntax-guide\/"
+      },
+      "headline": "Asciidoctor Extended Syntax Guide",
+      
+      "datePublished": "2019-08-29",
+      "dateModified": "2019-08-29 22:09:16 \x2b0800 \x2b0800",
+      "author": {
+        "@type": "Person",
+        "name": "John Dodo"
+      },
+      "description": "The purpose of this article to make sure not-so-common features of Asciidoctor (i.e. admonition blocks, callouts) are styled and fit to the theme.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "https:\/\/foo-dogsquared.github.io\/hugo-theme-arch-terminal-demo\/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https:\/\/foo-dogsquared.github.io\/logo.png"
+        }
+      }
+    }
+</script><link rel="stylesheet" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/scss/main.min.c2a4ee9c1dcd8610730474f34796a956a2363f6e08cbf17116dedab489a44c189bc60997092feaeae98f12118930ce4dbf4fdccdfac1b57f72e0b224fe79e009.css" integrity="sha512-wqTunB3NhhBzBHTzR5apVqI2P24Iy/FxFt7atImkTBibxgmXCS/q6umPEhGJMM5Nv0/czfrBtX9y4LIk/nngCQ==">
+<script>
+
+const theme = window.localStorage.getItem('theme'); 
+if (theme && theme !== "1") {
+    document.documentElement.classList.add('theme-' + theme);
+}
+</script>
+
+
+</head>
+<body class="site">
+  <main class="site__content">
+    <div class="site__page">
+  <nav class="site__breadcrumbs">
+    <a class="site__breadcrumb" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/">Home</a><a class="site__breadcrumb" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/">Articles</a><a class="site__breadcrumb--active" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/asciidoctor-extended-syntax-guide/">Asciidoctor Extended Syntax Guide</a>
+</nav>
+
+<h1 class="page__title">Asciidoctor Extended Syntax Guide</h1>
+  <div class="page__meta">
+    <p>
+    
+    <span class="page__date">
+    on <time datetime="2019-08-29T22:09:16&#43;08:00">2019-08-29</time>
+    
+    </span>
+    </p>
+
+    
+
+    
+    </div>
+</div>
+
+
+</div>
+
+<article class="page__content" ><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The purpose of this article to make sure not-so-common features of
+Asciidoctor (i.e. admonition blocks, callouts) are styled and
+fit to the theme.
+It also serves as a quick introduction to more Asciidoctor as well.
+Feel free to steal this if you want a template for this.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_admonition_blocks">Admonition blocks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Admonition blocks contain content that are not a part of the main
+content but you&#8217;ll want to draw attention to the audience anyways.</p>
+</div>
+<div class="paragraph">
+<p>By default, Asciidoctor provides five labels for admonitions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>TIP</code></p>
+</li>
+<li>
+<p><code>NOTE</code></p>
+</li>
+<li>
+<p><code>IMPORTANT</code></p>
+</li>
+<li>
+<p><code>CAUTION</code></p>
+</li>
+<li>
+<p><code>WARNING</code></p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><code>CAUTION</code> vs <code>WARNING</code></div>
+<div class="paragraph">
+<p>As the <a href="https://asciidoctor.org/docs/user-manual/#admonition">user manual</a>
+has said, <code>CAUTION</code> and <code>WARNING</code> should be used with different semantics.</p>
+</div>
+<div class="paragraph">
+<p><code>CAUTION</code> basically advises the user to observe care.
+<code>WARNING</code> warns the user about the dangers or consequences that&#8217;ll exist.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Writing an admonition is intuitively easy, simply write the label
+in all uppercase and append with a colon.
+Then write the content after.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asciidoc" data-lang="asciidoc">TIP: Lorem ipsum dolor sit amet consectetur adipiscing elit varius cursus
+orci nulla, fames nisl sodales scelerisque eu consequat sem imperdiet ac mi
+vivamus tempor, accumsan ad justo odio viverra praesent senectus class egestas duis.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It&#8217;ll render as this:</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Lorem ipsum dolor sit amet consectetur adipiscing elit varius cursus
+orci nulla, fames nisl sodales scelerisque eu consequat sem imperdiet ac mi
+vivamus tempor, accumsan ad justo odio viverra praesent senectus class egestas duis.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In case you want to style the labels differently such as assigning
+appropriate colors or an icon to the rest of the labels,
+here&#8217;s the rest of them:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Malesuada mattis aenean ultrices netus cursus viverra vivamus ultricies,
+velit molestie penatibus phasellus in ante luctus, habitant suspendisse eros
+turpis taciti risus himenaeos.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Velit fringilla feugiat nibh id faucibus scelerisque facilisis ac,
+suscipit quisque odio libero ullamcorper curabitur fames nascetur, elementum
+tristique hac nisl etiam dictumst dapibus.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Caution</div>
+</td>
+<td class="content">
+Tempus dui aptent tempor torquent lacinia sem cursus porta cras semper
+accumsan feugiat, himenaeos mi ullamcorper pharetra enim class eget auctor conubia
+metus curabitur.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+Aliquet ut maecenas mollis id enim nibh suscipit quisque posuere cum fusce,
+dignissim ad curabitur odio ac diam pharetra platea vivamus eleifend.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_callouts">Callouts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Callouts are used to add annotations within a verbatim block.
+This is especially useful for code listings in order to effectively explain what
+is going on within the code.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example of using callouts.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-asciidoc" data-lang="asciidoc">[source,python]
+----
+from pathlib import Path
+from re import compile, match
+
+current_directory = Path(".") &lt;1&gt;
+notes_directory = current_directory / "notes/" &lt;2&gt;
+----
+&lt;1&gt; Created a Path object
+&lt;2&gt; Appending a Path object with "/"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And it&#8217;ll render as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">from pathlib import Path
+from re import compile, match
+
+current_directory = Path(".") # <b class="conum">(1)</b>
+notes_directory = current_directory / "notes/" # <b class="conum">(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Created a <code>Path</code> object</p>
+</li>
+<li>
+<p>Appending a <code>Path</code> object with "/"</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>One of the most important you should style is the callout number
+on the code listings block.
+Normally, when a user wants to copy-paste (even though I don&#8217;t personally
+encourage it), the callout number gets in the way and they have to
+manually remove them which can be annoying.</p>
+</div>
+<div class="paragraph">
+<p>Either attach the property <code>user-select</code> with it or take a part from the
+default Asciidoctor stylesheet and include it in your own stylesheet.</p>
+</div>
+</div>
+</div>
+
+</article>
+
+
+    
+
+  </main>
+  
+  <footer class="site__footer">
+    <div class="footer__links"><a rel="me" class="footer__link" href="https://github.com/foo-dogsquared/">GitHub</a><a rel="me" class="footer__link" href="https://keybase.io/foo_dogsquared">Keybase</a><a rel="me" class="footer__link" href="https://twitter.com/foo_dogsquared">Twitter</a></div>
+    
+    
+    <p class="footer__sign">Unless explicitly stated, all content released here are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.</p></footer>
+
+
+<script defer type="text/javascript" src="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/js/script.659b08fa6867590fcceb2f6d10da311d88dfb5471559391b11173f54932cca9a9748c443b8e834335f5a02752130f3652672f587486c4ec496c49f08e85b6130.js" integrity="sha512-ZZsI&#43;mhnWQ/M6y9tENoxHYjftUcVWTkbERc/VJMsypqXSMRDuOg0M19aAnUhMPNlJnL1h0hsTsSWxJ8I6FthMA=="></script>
+
+
+
+</body>
+</html>

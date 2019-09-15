@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adding Your Own JS Libraries :: Arch Terminal — Blogger</title>
+
+<meta name="author" content="John Dodo">
+<meta name="application-name" content="Arch Terminal">
+<meta name="description" content="Adding it sitewide This theme allows you to quickly include your own set of third-party (or your own) libraries on the whole site by providing a data file named libraries (i.">
+<meta name="robots" content="noodp"/>
+<meta name="generator" content="Hugo 0.58.2" />
+<meta name="referrer" content="no-referrer" />
+<meta name="format-detection" content="telephone=no">
+<meta name="keywords" content="John Dodo, ordinary-extinction, blog">
+<link rel="noopener me" href="https://github.com/foo-dogsquared/" />
+<link rel="noopener me" href="https://keybase.io/foo_dogsquared" />
+<link rel="noopener me" href="https://twitter.com/foo_dogsquared" />
+
+<link rel="canonical" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/adding-your-own-js-libraries/" />
+
+
+<link rel="icon" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/logo.png" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Adding Your Own JS Libraries" />
+<meta name="twitter:description" content="Adding it sitewide This theme allows you to quickly include your own set of third-party (or your own) libraries on the whole site by providing a data file named libraries (i." />
+<meta name="twitter:site" content="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/" />
+<meta name="twitter:creator" content="John Dodo" />
+<meta name="twitter:image" content="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/logo.png">
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en" />
+<meta property="og:name" content="John Dodo" />
+<meta property="og:title" content="Adding Your Own JS Libraries" />
+<meta property="og:url" content="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/" />
+<meta property="og:site_name" content="Arch Terminal" />
+<meta property="og:description" content="Adding it sitewide This theme allows you to quickly include your own set of third-party (or your own) libraries on the whole site by providing a data file named libraries (i." />
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/foo-dogsquared.github.io\/hugo-theme-arch-terminal-demo\/articles\/adding-your-own-js-libraries\/"
+      },
+      "headline": "Adding Your Own JS Libraries",
+      
+      "datePublished": "2019-09-10",
+      "dateModified": "2019-09-10 15:26:52 \x2b0800 \x2b0800",
+      "author": {
+        "@type": "Person",
+        "name": "John Dodo"
+      },
+      "description": "Adding it sitewide This theme allows you to quickly include your own set of third-party (or your own) libraries on the whole site by providing a data file named libraries (i.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "https:\/\/foo-dogsquared.github.io\/hugo-theme-arch-terminal-demo\/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https:\/\/foo-dogsquared.github.io\/logo.png"
+        }
+      }
+    }
+</script><link rel="stylesheet" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/scss/main.min.c2a4ee9c1dcd8610730474f34796a956a2363f6e08cbf17116dedab489a44c189bc60997092feaeae98f12118930ce4dbf4fdccdfac1b57f72e0b224fe79e009.css" integrity="sha512-wqTunB3NhhBzBHTzR5apVqI2P24Iy/FxFt7atImkTBibxgmXCS/q6umPEhGJMM5Nv0/czfrBtX9y4LIk/nngCQ==">
+<script>
+
+const theme = window.localStorage.getItem('theme'); 
+if (theme && theme !== "1") {
+    document.documentElement.classList.add('theme-' + theme);
+}
+</script>
+
+
+</head>
+<body class="site">
+  <main class="site__content">
+    <div class="site__page">
+  <nav class="site__breadcrumbs">
+    <a class="site__breadcrumb" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/">Home</a><a class="site__breadcrumb" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/">Articles</a><a class="site__breadcrumb--active" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/adding-your-own-js-libraries/">Adding Your Own JS Libraries</a>
+</nav>
+
+<h1 class="page__title">Adding Your Own JS Libraries</h1>
+  <div class="page__meta">
+    <p>
+    
+    <span class="page__date">
+    on <time datetime="2019-09-10T15:26:52&#43;08:00">2019-09-10</time>
+    
+    </span>
+    </p>
+
+    
+
+    
+    </div>
+</div>
+
+
+</div>
+
+<article class="page__content" ><div class="sect1">
+<h2 id="_adding_it_sitewide">Adding it sitewide</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This theme allows you to quickly include your own set of third-party
+(or your own) libraries on the whole site by providing a
+<a href="https://gohugo.io/templates/data-templates/#data-files-in-themes">data file</a>
+named <code>libraries</code> (i.e. <code>libraries.json</code>, <code>libraries.yaml</code>, <code>libraries.toml</code>)
+in your data folder.</p>
+</div>
+<div class="paragraph">
+<p>The data <code>libraries</code> should hold a list of objects with specific keys.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s the keys/fields that the theme looks for:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Key</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Describes whether it&#8217;s a CSS or JS library.
+Only accepts possible values: <code>js</code> and <code>css</code>.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>url</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URL of the script to be referred.
+Accepts absolute URL (such as CDN links) and relative
+links (such as the scripts in the static folder).</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>weight</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the precedence of the script.
+The less weight value, the higher the precedence so any
+important scripts should have the least weight value.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sync</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Includes the script to be a part of the DOM rendering,
+bringing down the
+<a href="https://developers.google.com/web/fundamentals/performance/rail#ux">perceived page performance</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>defer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Makes the script to be deferred.
+Once the field value is <code>true</code>, the script will be deferred no matter what.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>As you might tell, the scripts will be delivered asynchronously (with the
+<code>async</code> attribute) by default.</p>
+</div>
+<div class="paragraph">
+<p>If you want finer control with how the scripts are delivered, I recommend
+to modify the script partial (at <code>theme/$THEME_NAME/layouts/partials/script.html</code>).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_scripts_for_a_specific_post">Adding scripts for a specific post</h2>
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+If you plan on future-proofing your content, I recommend to
+embed it on the document itself than relying on the frontmatter since this is
+a theme-specific feature and may present some problems if you migrate it somewhere else.
+For Markdown, you can simply write raw HTML with it.
+On Asciidoctor, you can simply embed it with a
+<a href="https://asciidoctor.org/docs/user-manual/#passthroughs">passthrough block</a>.
+You also gain finer control on embedding your scripts this way.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In order to add specific JS libraries, you need the <code>libs</code> object in the frontmatter.
+It should hold an object named <code>js</code> where it holds an array of URLs of the libraries.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s say you&#8217;re writing a post on <a href="https://p5js.org/">p5.js</a>.
+You can include it in the frontmatter like the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">---
+title: "Trying out p5.js"
+date: 2019-09-10T15:26:52+08:00
+
+libs:
+    js:
+        - https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js
+---</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Take note that scripts loaded this way are executed first before the sitewide libraries and
+linked with <code>async</code> attribute.
+If you want finer control, I recommend to embed them into the document itself.</p>
+</div>
+</div>
+</div>
+
+</article>
+
+
+    
+
+  </main>
+  
+  <footer class="site__footer">
+    <div class="footer__links"><a rel="me" class="footer__link" href="https://github.com/foo-dogsquared/">GitHub</a><a rel="me" class="footer__link" href="https://keybase.io/foo_dogsquared">Keybase</a><a rel="me" class="footer__link" href="https://twitter.com/foo_dogsquared">Twitter</a></div>
+    
+    
+    <p class="footer__sign">Unless explicitly stated, all content released here are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.</p></footer>
+
+
+<script defer type="text/javascript" src="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/js/script.659b08fa6867590fcceb2f6d10da311d88dfb5471559391b11173f54932cca9a9748c443b8e834335f5a02752130f3652672f587486c4ec496c49f08e85b6130.js" integrity="sha512-ZZsI&#43;mhnWQ/M6y9tENoxHYjftUcVWTkbERc/VJMsypqXSMRDuOg0M19aAnUhMPNlJnL1h0hsTsSWxJ8I6FthMA=="></script>
+
+
+
+</body>
+</html>

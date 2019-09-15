@@ -1,0 +1,2045 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Home on Arch Terminal</title>
+  <subtitle type="html">Blogger</subtitle>
+  <link rel="alternate" type="text/html" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/"/>
+  <link rel="self" type="application/atom+xml" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/index.atom"/>
+  <rights>Unless explicitly stated, all content released here are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0).</rights>
+  <generator>Hugo -- gohugo.io</generator>
+  <updated>2019-08-23T00:21:52+08:00</updated>
+  <author>
+    <name>John Dodo</name>
+    <email>johndodo@example.com</email>
+  </author>
+  <id>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/</id>
+  
+  
+  <entry>
+    <id>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/adding-your-own-js-libraries/</id>
+    <title type="text">Adding Your Own JS Libraries</title>
+    <link rel="alternate" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/adding-your-own-js-libraries/" hreflang="en" title="Adding Your Own JS Libraries"/>
+    <category term="javascript"/>
+    <category term="guide"/>
+    <published>2019-09-10T15:26:52+08:00</published>
+    <updated>2019-09-10T15:26:52+08:00</updated>
+    <content type="html">&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_adding_it_sitewide&#34;&gt;Adding it sitewide&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This theme allows you to quickly include your own set of third-party
+(or your own) libraries on the whole site by providing a
+&lt;a href=&#34;https://gohugo.io/templates/data-templates/#data-files-in-themes&#34;&gt;data file&lt;/a&gt;
+named &lt;code&gt;libraries&lt;/code&gt; (i.e. &lt;code&gt;libraries.json&lt;/code&gt;, &lt;code&gt;libraries.yaml&lt;/code&gt;, &lt;code&gt;libraries.toml&lt;/code&gt;)
+in your data folder.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The data &lt;code&gt;libraries&lt;/code&gt; should hold a list of objects with specific keys.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Here&amp;#8217;s the keys/fields that the theme looks for:&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&#34;tableblock frame-all grid-all stretch&#34;&gt;
+&lt;colgroup&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Key&lt;/th&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Data type&lt;/th&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Description&lt;/th&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Optional&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;code&gt;type&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;string&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Describes whether it&amp;#8217;s a CSS or JS library.
+Only accepts possible values: &lt;code&gt;js&lt;/code&gt; and &lt;code&gt;css&lt;/code&gt;.&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;code&gt;url&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;string&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;The URL of the script to be referred.
+Accepts absolute URL (such as CDN links) and relative
+links (such as the scripts in the static folder).&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;code&gt;weight&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;number&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Indicates the precedence of the script.
+The less weight value, the higher the precedence so any
+important scripts should have the least weight value.&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;code&gt;sync&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;boolean&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Includes the script to be a part of the DOM rendering,
+bringing down the
+&lt;a href=&#34;https://developers.google.com/web/fundamentals/performance/rail#ux&#34;&gt;perceived page performance&lt;/a&gt;.&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Yes&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;code&gt;defer&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;boolean&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Makes the script to be deferred.
+Once the field value is &lt;code&gt;true&lt;/code&gt;, the script will be deferred no matter what.&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Yes&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As you might tell, the scripts will be delivered asynchronously (with the
+&lt;code&gt;async&lt;/code&gt; attribute) by default.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you want finer control with how the scripts are delivered, I recommend
+to modify the script partial (at &lt;code&gt;theme/$THEME_NAME/layouts/partials/script.html&lt;/code&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_adding_scripts_for_a_specific_post&#34;&gt;Adding scripts for a specific post&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Tip&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+If you plan on future-proofing your content, I recommend to
+embed it on the document itself than relying on the frontmatter since this is
+a theme-specific feature and may present some problems if you migrate it somewhere else.
+For Markdown, you can simply write raw HTML with it.
+On Asciidoctor, you can simply embed it with a
+&lt;a href=&#34;https://asciidoctor.org/docs/user-manual/#passthroughs&#34;&gt;passthrough block&lt;/a&gt;.
+You also gain finer control on embedding your scripts this way.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In order to add specific JS libraries, you need the &lt;code&gt;libs&lt;/code&gt; object in the frontmatter.
+It should hold an object named &lt;code&gt;js&lt;/code&gt; where it holds an array of URLs of the libraries.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Let&amp;#8217;s say you&amp;#8217;re writing a post on &lt;a href=&#34;https://p5js.org/&#34;&gt;p5.js&lt;/a&gt;.
+You can include it in the frontmatter like the following:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;---
+title: &#34;Trying out p5.js&#34;
+date: 2019-09-10T15:26:52+08:00
+
+libs:
+    js:
+        - https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js
+---&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Take note that scripts loaded this way are executed first before the sitewide libraries and
+linked with &lt;code&gt;async&lt;/code&gt; attribute.
+If you want finer control, I recommend to embed them into the document itself.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/rss-atom-and-json-feed-support/</id>
+    <title type="text">RSS, Atom, and JSON Feed Support</title>
+    <link rel="alternate" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/rss-atom-and-json-feed-support/" hreflang="en" title="RSS, Atom, and JSON Feed Support"/>
+    <category term="rss"/>
+    <category term="atom"/>
+    <category term="json"/>
+    <category term="feeds"/>
+    <category term="guide"/>
+    <published>2019-09-04T17:22:44+08:00</published>
+    <updated>2019-09-04T17:22:44+08:00</updated>
+    <content type="html">&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This theme supports RSS, Atom, and JSON feed output for more ways of publishing
+web content for your visitors.
+It is also suitable for reading content from feed readers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Here are the following documents used as references for the creation of the
+output feed templates.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://tools.ietf.org/html/rfc4287&#34;&gt;Atom 1.0 - IETF RFC4287&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://jsonfeed.org/version/1&#34;&gt;JSON Feed version 1 specifications&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://cyber.harvard.edu/rss/rss.html&#34;&gt;RSS 2.0 specifications&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In this demo, it is enabled and you should be able to see them through the
+following links:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;RSS&lt;/strong&gt;: &lt;a href=&#34;https://foo-dogsquared.github.io/hugo-theme-terminal-plus-minus-demo/index.rss&#34; class=&#34;bare&#34;&gt;https://foo-dogsquared.github.io/hugo-theme-terminal-plus-minus-demo/index.rss&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Atom&lt;/strong&gt;: &lt;a href=&#34;https://foo-dogsquared.github.io/hugo-theme-terminal-plus-minus-demo/index.atom&#34; class=&#34;bare&#34;&gt;https://foo-dogsquared.github.io/hugo-theme-terminal-plus-minus-demo/index.atom&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;JSON&lt;/strong&gt;: &lt;a href=&#34;https://foo-dogsquared.github.io/hugo-theme-terminal-plus-minus-demo/index.json&#34; class=&#34;bare&#34;&gt;https://foo-dogsquared.github.io/hugo-theme-terminal-plus-minus-demo/index.json&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For enabling output feeds, utilize the
+&lt;a href=&#34;https://gohugo.io/templates/output-formats&#34;&gt;output formats&lt;/a&gt; in your site configuration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you&amp;#8217;re settling with this option, here&amp;#8217;s an example template for enabling all of
+the feed formats.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;# Visit the following for more information:
+# https://gohugo.io/templates/output-formats
+
+# Defining the media type of the output formats
+# For JSON format, it doesn&#39;t need to be since it&#39;s already built-in into Hugo
+[mediaTypes]
+    [mediaTypes.&#34;application/atom+xml&#34;]
+        suffixes = [&#34;atom&#34;, &#34;atom.xml&#34;] # You can remove the &#34;atom.xml&#34; if you want
+
+    # Redefining RSS media type for the additional suffix
+    [mediaTypes.&#34;application/rss+xml&#34;]
+        suffixes = [&#34;rss&#34;, &#34;rss.xml&#34;] # You can remove the &#34;rss.xml&#34; if you want
+
+
+# Including all of the feed output formats in the build
+[outputFormats]
+    [outputFormats.Rss]
+        mediaType = &#34;application/rss+xml&#34;
+        baseName = &#34;index&#34;
+
+    [outputFormats.Atom]
+        mediaType = &#34;application/atom+xml&#34;
+        baseName = &#34;index&#34;
+
+# Indicating what output formats shall be included
+# for the following kinds
+[outputs]
+    # .Site.BaseURL/index.* is available
+    home = [&#34;HTML&#34;, &#34;JSON&#34;, &#34;RSS&#34;, &#34;ATOM&#34;]
+
+    # .Site.BaseURL/$section/index.* is available
+    section = [&#34;HTML&#34;, &#34;JSON&#34;, &#34;RSS&#34;, &#34;ATOM&#34;]&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/asciidoctor-extended-syntax-guide/</id>
+    <title type="text">Asciidoctor Extended Syntax Guide</title>
+    <link rel="alternate" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/asciidoctor-extended-syntax-guide/" hreflang="en" title="Asciidoctor Extended Syntax Guide"/>
+    <category term="asciidoctor"/>
+    <category term="guide"/>
+    <published>2019-08-29T22:09:16+08:00</published>
+    <updated>2019-08-29T22:09:16+08:00</updated>
+    <content type="html">&lt;div id=&#34;preamble&#34;&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The purpose of this article to make sure not-so-common features of
+Asciidoctor (i.e. admonition blocks, callouts) are styled and
+fit to the theme.
+It also serves as a quick introduction to more Asciidoctor as well.
+Feel free to steal this if you want a template for this.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_admonition_blocks&#34;&gt;Admonition blocks&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Admonition blocks contain content that are not a part of the main
+content but you&amp;#8217;ll want to draw attention to the audience anyways.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;By default, Asciidoctor provides five labels for admonitions:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;TIP&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;NOTE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;IMPORTANT&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;CAUTION&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;WARNING&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sidebarblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;&lt;code&gt;CAUTION&lt;/code&gt; vs &lt;code&gt;WARNING&lt;/code&gt;&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As the &lt;a href=&#34;https://asciidoctor.org/docs/user-manual/#admonition&#34;&gt;user manual&lt;/a&gt;
+has said, &lt;code&gt;CAUTION&lt;/code&gt; and &lt;code&gt;WARNING&lt;/code&gt; should be used with different semantics.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;code&gt;CAUTION&lt;/code&gt; basically advises the user to observe care.
+&lt;code&gt;WARNING&lt;/code&gt; warns the user about the dangers or consequences that&amp;#8217;ll exist.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Writing an admonition is intuitively easy, simply write the label
+in all uppercase and append with a colon.
+Then write the content after.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-asciidoc&#34; data-lang=&#34;asciidoc&#34;&gt;TIP: Lorem ipsum dolor sit amet consectetur adipiscing elit varius cursus
+orci nulla, fames nisl sodales scelerisque eu consequat sem imperdiet ac mi
+vivamus tempor, accumsan ad justo odio viverra praesent senectus class egestas duis.&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It&amp;#8217;ll render as this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Tip&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+Lorem ipsum dolor sit amet consectetur adipiscing elit varius cursus
+orci nulla, fames nisl sodales scelerisque eu consequat sem imperdiet ac mi
+vivamus tempor, accumsan ad justo odio viverra praesent senectus class egestas duis.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In case you want to style the labels differently such as assigning
+appropriate colors or an icon to the rest of the labels,
+here&amp;#8217;s the rest of them:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Note&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+Malesuada mattis aenean ultrices netus cursus viverra vivamus ultricies,
+velit molestie penatibus phasellus in ante luctus, habitant suspendisse eros
+turpis taciti risus himenaeos.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Important&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+Velit fringilla feugiat nibh id faucibus scelerisque facilisis ac,
+suscipit quisque odio libero ullamcorper curabitur fames nascetur, elementum
+tristique hac nisl etiam dictumst dapibus.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock caution&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Caution&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+Tempus dui aptent tempor torquent lacinia sem cursus porta cras semper
+accumsan feugiat, himenaeos mi ullamcorper pharetra enim class eget auctor conubia
+metus curabitur.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock warning&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Warning&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+Aliquet ut maecenas mollis id enim nibh suscipit quisque posuere cum fusce,
+dignissim ad curabitur odio ac diam pharetra platea vivamus eleifend.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_callouts&#34;&gt;Callouts&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Callouts are used to add annotations within a verbatim block.
+This is especially useful for code listings in order to effectively explain what
+is going on within the code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Here&amp;#8217;s an example of using callouts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-asciidoc&#34; data-lang=&#34;asciidoc&#34;&gt;[source,python]
+----
+from pathlib import Path
+from re import compile, match
+
+current_directory = Path(&#34;.&#34;) &amp;lt;1&amp;gt;
+notes_directory = current_directory / &#34;notes/&#34; &amp;lt;2&amp;gt;
+----
+&amp;lt;1&amp;gt; Created a Path object
+&amp;lt;2&amp;gt; Appending a Path object with &#34;/&#34;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;And it&amp;#8217;ll render as:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;from pathlib import Path
+from re import compile, match
+
+current_directory = Path(&#34;.&#34;) # &lt;b class=&#34;conum&#34;&gt;(1)&lt;/b&gt;
+notes_directory = current_directory / &#34;notes/&#34; # &lt;b class=&#34;conum&#34;&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Created a &lt;code&gt;Path&lt;/code&gt; object&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Appending a &lt;code&gt;Path&lt;/code&gt; object with &#34;/&#34;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;One of the most important you should style is the callout number
+on the code listings block.
+Normally, when a user wants to copy-paste (even though I don&amp;#8217;t personally
+encourage it), the callout number gets in the way and they have to
+manually remove them which can be annoying.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Either attach the property &lt;code&gt;user-select&lt;/code&gt; with it or take a part from the
+default Asciidoctor stylesheet and include it in your own stylesheet.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/emoji-support/</id>
+    <title type="text">Emoji Support</title>
+    <link rel="alternate" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/emoji-support/" hreflang="en" title="Emoji Support"/>
+    <category term="emoji"/>
+    <category term="guide"/>
+    <published>2019-08-28T12:11:22+08:00</published>
+    <updated>2019-08-28T12:11:22+08:00</updated>
+    <content type="html">&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://gohugo.io/functions/emojify/&#34;&gt;&lt;code&gt;emojify&lt;/code&gt;&lt;/a&gt; function can be called directly in templates or &lt;a href=&#34;https://gohugo.io/templates/shortcode-templates/#inline-shortcodes&#34;&gt;Inline Shortcodes&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To enable emoji globally, set &lt;code&gt;enableEmoji&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; in your site’s &lt;a href=&#34;https://gohugo.io/getting-started/configuration/&#34;&gt;configuration&lt;/a&gt; and then you can type emoji shorthand codes directly in content files; e.g.&lt;/p&gt;
+
+&lt;p&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙈&lt;/span&gt; &lt;code&gt;:see_no_evil:&lt;/code&gt;&lt;/span&gt;  &lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙉&lt;/span&gt; &lt;code&gt;:hear_no_evil:&lt;/code&gt;&lt;/span&gt;  &lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙊&lt;/span&gt; &lt;code&gt;:speak_no_evil:&lt;/code&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://www.emoji-cheat-sheet.com/&#34;&gt;Emoji cheat sheet&lt;/a&gt; is a useful reference for emoji shorthand codes.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;N.B.&lt;/strong&gt; The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;.emoji {
+font-family: Apple Color Emoji,Segoe UI Emoji,NotoColorEmoji,Segoe UI Symbol,Android Emoji,EmojiSymbols;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+  </entry>
+  
+  <entry>
+    <id>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/mathjax-support-for-asciidoctor/</id>
+    <title type="text">MathJax Support for Asciidoctor</title>
+    <link rel="alternate" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/mathjax-support-for-asciidoctor/" hreflang="en" title="MathJax Support for Asciidoctor"/>
+    <category term="asciidoctor"/>
+    <category term="mathjax"/>
+    <category term="guide"/>
+    <published>2019-08-28T01:47:02+08:00</published>
+    <updated>2019-08-28T01:47:02+08:00</updated>
+    <content type="html">&lt;div id=&#34;preamble&#34;&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This is just an article for testing MathJax in Asciidoctor files.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can use this as a testing template for all of your LaTeX math needs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_basics&#34;&gt;Basics&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This should be an inline math content \(\LaTeX\) with the LaTeX symbol.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The following block content should contain a sentence with the LaTeX symbol.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\LaTeX\text{ is awesome.}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_whitespace&#34;&gt;Whitespace&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;LaTeX treats whitespace characters such as tabs and spaces uniformly as one unit
+of space.
+A text that is composed of two tabs and 10 spaces consecutively is one space.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This is especially prominent in math mode (which MathJax is&amp;#8230;&amp;#8203; always).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Try to render this, for example.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;This is a LaTeX sentence (or I guess in MathJax).&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;And it&amp;#8217;ll render as the following:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[ This is a LaTeX sentence (or I guess in MathJax).\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Since MathJax is in&amp;#8230;&amp;#8203; perpetual math mode and specifically made for rendering
+math formulae, we shouldn&amp;#8217;t have a problem with maintaining it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Just a heads up.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_commands&#34;&gt;Commands&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;One of the main syntax you should mind in MathJax are the LaTeX commands.
+Think of it like the HTML tags in LaTeX (although not really).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Here&amp;#8217;s the basic construct of a LaTeX command:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\commandname[option1,option2,...]{argument1}{argument2}...&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Within commands and if allowed, you can nest commands.
+Take this example for example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\sum_{i=0}^{6} = \frac{i^{2}}{ 2 \bmod (i * 4)} + i^{3}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[ \sum_{i=0}^{6} = \frac{i^{2}}{ 2 \bmod (i * 4)} + i^{3}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_reserved_characters&#34;&gt;Reserved characters&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The following characters have special meaning to LaTeX.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code&gt;# $ % ^ &amp;amp; _ { } ~ \&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[# $ % ^ &amp;amp; _ { } ~ \\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As you can see, it should result in an error or not rendered
+properly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In order to render them in text, you need to add an escape character.
+In this case, it&amp;#8217;s a backslash.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\# \$ \% \^ \&amp;amp; \_ \{ \} \~ \\&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\# \$ \% \^{} \&amp;amp; \_ \{ \} \~{} \textbackslash{}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Note&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+Some of them may not render properly due to MathJax lack of support for
+the following. (We don&amp;#8217;t really need those when using MathJax anyway)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_text_formatting&#34;&gt;Text formatting&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can do a little text formatting in a LaTeX math content (though it&amp;#8217;s pointless
+to do so).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_literal_text&#34;&gt;Literal text&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can make a text with &lt;code&gt;\text{}&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\text{The quick brown fox jumps over the lazy dog.}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\text{The quick brown fox jumps over the lazy dog.}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_boldface_text&#34;&gt;Boldface text&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can make a text boldface with &lt;code&gt;\textbf{}&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\textbf{The quick brown fox jumps over the lazy dog.}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\textbf{The quick brown fox jumps over the lazy dog.}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_italic_text&#34;&gt;Italic text&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;To make a text block italic, enclose it with a &lt;code&gt;\textit{}&lt;/code&gt; command.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\textit{The quick brown fox jumps over the lazy dog.}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\textit{The quick brown fox jumps over the lazy dog.}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_monospaced_text&#34;&gt;Monospaced text&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In order for the text to be monospaced, enclose it with a &lt;code&gt;\texttt{}&lt;/code&gt; (text teletype) command.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\texttt{The quick brown fox jumps over the lazy dog.}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\texttt{The quick brown fox jumps over the lazy dog.}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_text_in_sans_serif_font_equivalent&#34;&gt;Text in sans-serif font equivalent&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Most importantly, you can make a text rendered in sans-serif with &lt;code&gt;\textsf{}&lt;/code&gt; command.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\textsf{The quick brown fox jumps over the lazy dog.}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\textsf{The quick brown fox jumps over the lazy dog.}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_more_options&#34;&gt;More options&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can see a lot more options from &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Fonts&#34;&gt;this reference&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_math_formatting&#34;&gt;Math formatting&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This is what you mostly came for, right?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;All righty then.
+Let&amp;#8217;s see what MathJax in Asciidoctor (M in A?) can do.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_fractions&#34;&gt;Fractions&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For rendering fractions, you need to use the &lt;code&gt;\frac&lt;/code&gt; command.
+The command simply needs two positional arguments.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\frac{NUMERATOR}{DENOMINATOR}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For a bit of an example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\frac{x_1 + y_2}{x_2 + y_1}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\frac{x_1 + y_2}{x_2 + y_1}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_roots&#34;&gt;Roots&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In order to create roots, you need the &lt;code&gt;\sqrt&lt;/code&gt; command.
+It only needs the content to be put inside of it as the argument.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\sqrt{2a + b}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\sqrt{2a + b}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Yes, you can nest some stuff.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\sqrt{\frac{2a + b}{a^2 - b^2}}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\sqrt{\frac{2a + b}{a^2 - b^2}}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can specify an optional argument to change the magnitude.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\sqrt[\frac{1}{2}]{2a + b}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\sqrt[\frac{1}{2}]{2a + b}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_superscripts&#34;&gt;Superscripts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In order to make superscripts, place it next to a caret character (&lt;code&gt;^&lt;/code&gt;).
+To render it in more than one character, enclose it in curly brackets (&lt;code&gt;{}&lt;/code&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;2^2 * 2^{23} = 2^{25}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[2^2 * 2^{23} = 2^{25}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can also nest it within a superscript like so.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;2^{2^{10}} * 2^{23^2} = \infty&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[ 2^{2^{10}} * 2^{23^2} = \infty\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;OK, I&amp;#8217;ve gone overboard with the scale so I just put infinity as the
+answer instead.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_subscripts&#34;&gt;Subscripts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For making subscripts, place it next to the underscore (&lt;code&gt;_&lt;/code&gt;).
+Like the superscript command, if you include more than one character,
+enclose it in a pair of curly brackets (&lt;code&gt;{}&lt;/code&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;a_1 + a_2 + a_3 + ... + a_{14} = \frac{a_1 * a_{14}}{2}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[a_1 + a_2 + a_3 + ... + a_{14} = \frac{a_1 * a_{14}}{2}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Like superscripts and most of the commands, you can nest subscripts
+to another subscript (and other commands).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;a_{2_{1}} + a_{2_{2}} = b_{2_{1}} + b_{2_{2}}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[ a_{2_{1}} + a_{2_{2}} = b_{2_{1}} + b_{2_{2}}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_greek_letters&#34;&gt;Greek letters&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can render Greek letters with the appropriate command.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;code&gt;\alpha&lt;/code&gt; for lowercase Greek letter alpha,
+&lt;code&gt;\beta&lt;/code&gt; for lowercase Greek letter beta,
+&lt;code&gt;\gamma&lt;/code&gt; for lowercase Greek letter gamma,
+&lt;code&gt;\Gamma&lt;/code&gt; for uppercase Greek letter gamma,
+you get the point.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \varphi, \mu, \Phi&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \varphi, \mu, \Phi\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_mathematical_sizing&#34;&gt;Mathematical sizing&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Oftentimes, you might need to align and resize certain characters like
+the parenthesis or the brackets that enclose a formula or an example.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can use the &lt;code&gt;\left&lt;/code&gt;, &lt;code&gt;\right&lt;/code&gt;, and &lt;code&gt;\middle&lt;/code&gt; commands to resize
+the delimiters.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\left(\frac{x^2}{y^3}\right)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\left(\frac{x^2}{y^3}\right)\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Since curly braces have semantic meaning to \(\LaTeX\), you need to
+escape it.
+Pretty much, it&amp;#8217;ll look like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\left\{\frac{x^2}{y^3}\right\}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\left\{\frac{x^2}{y^3}\right\}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_a_lot_more&#34;&gt;A lot more!&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You have a whole slew of mathematical symbols available.
+Please refer to
+&lt;a href=&#34;https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols&#34;&gt;this list of LaTeX mathematical symbols&lt;/a&gt;.
+Though I don&amp;#8217;t know what&amp;#8217;s missing symbols and whatnot (since I don&amp;#8217;t MathJax often) but
+it should be enough.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can also go to
+&lt;a href=&#34;https://math-on-quora.surge.sh/&#34;&gt;this web page that details using MathJax on Quora&lt;/a&gt;
+by Gilles Castel.
+It is specifically made for writing \(\LaTeX\) on Quora but it
+can be used as a general MathJax guide, anyways.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/mathjax-support-for-markdown/</id>
+    <title type="text">MathJax Support for Markdown</title>
+    <link rel="alternate" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/mathjax-support-for-markdown/" hreflang="en" title="MathJax Support for Markdown"/>
+    <category term="markdown"/>
+    <category term="mathjax"/>
+    <category term="guide"/>
+    <published>2019-08-28T00:09:56+08:00</published>
+    <updated>2019-08-28T00:09:56+08:00</updated>
+    <content type="html">
+
+&lt;p&gt;This is just an article for testing MathJax in Markdown files.&lt;/p&gt;
+
+&lt;p&gt;You can use this as a testing template for all of your LaTeX math needs.&lt;/p&gt;
+
+&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;
+
+&lt;p&gt;This should be an inline math content \(\LaTeX\) with the LaTeX symbol.&lt;/p&gt;
+
+&lt;p&gt;The following block content should contain a sentence with the LaTeX symbol.&lt;/p&gt;
+
+&lt;p&gt;$$\LaTeX\text{ is awesome.}$$&lt;/p&gt;
+
+&lt;h3 id=&#34;whitespace&#34;&gt;Whitespace&lt;/h3&gt;
+
+&lt;p&gt;LaTeX treats whitespace characters such as tabs and spaces uniformly as one unit
+of space.
+A text that is composed of two tabs and 10 spaces consecutively is one space.&lt;/p&gt;
+
+&lt;p&gt;This is especially prominent in math mode (which MathJax is&amp;hellip; always).&lt;/p&gt;
+
+&lt;p&gt;Try to render this, for example.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;This is a LaTeX sentence (or I guess in MathJax).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And it&amp;rsquo;ll render as the following:&lt;/p&gt;
+
+&lt;p&gt;$$ This is a LaTeX sentence (or I guess in MathJax). $$&lt;/p&gt;
+
+&lt;p&gt;Since MathJax is in&amp;hellip; perpetual math mode and specifically made for rendering
+math formulae, we shouldn&amp;rsquo;t have a problem with maintaining it.&lt;/p&gt;
+
+&lt;p&gt;Just a heads up.&lt;/p&gt;
+
+&lt;h3 id=&#34;commands&#34;&gt;Commands&lt;/h3&gt;
+
+&lt;p&gt;One of the main syntax you should mind in MathJax are the LaTeX commands.
+Think of it like the HTML tags in LaTeX (although not really).&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the basic construct of a LaTeX command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\commandname[option1,option2,...]{argument1}{argument2}...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Within commands and if allowed, you can nest commands.
+Take this example for example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\sum_{i=0}^{6} = \frac{i^{2}}{ 2 \bmod (i * 4)} + i^{3}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$ \sum_{i=0}^{6} = \frac{i^{2}}{ 2 \bmod (i * 4)} + i^{3} $$&lt;/p&gt;
+
+&lt;h3 id=&#34;reserved-characters&#34;&gt;Reserved characters&lt;/h3&gt;
+
+&lt;p&gt;The following characters have special meaning to LaTeX.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# $ % ^ &amp;amp; _ { } ~ \
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$ # $ % ^ &amp;amp; _ { } ~ \ $$&lt;/p&gt;
+
+&lt;p&gt;As you can see, if rendered, it should result in an error.&lt;/p&gt;
+
+&lt;p&gt;In order to render them in text, you need to add an escape character.
+In this case, it&amp;rsquo;s a backslash.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\# \$ \% \^ \&amp;amp; \_ \{ \} \~ \\
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the case of rendering it from Markdown, double slashes might be needed.&lt;/p&gt;
+
+&lt;p&gt;$$ \# \$ \% \^ \&amp;amp; \_ \{ \} \~ \ $$&lt;/p&gt;
+
+&lt;h2 id=&#34;text-formatting&#34;&gt;Text formatting&lt;/h2&gt;
+
+&lt;p&gt;You can do a little text formatting in a LaTeX math content (though it&amp;rsquo;s pointless
+to do so).&lt;/p&gt;
+
+&lt;h3 id=&#34;literal-text&#34;&gt;Literal text&lt;/h3&gt;
+
+&lt;p&gt;You can make a text with &lt;code&gt;\text{}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\text{The quick brown fox jumps over the lazy dog.}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$\text{The quick brown fox jumps over the lazy dog.}$$&lt;/p&gt;
+
+&lt;h3 id=&#34;boldface-text&#34;&gt;Boldface text&lt;/h3&gt;
+
+&lt;p&gt;You can make a text boldface with &lt;code&gt;\textbf{}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\textbf{The quick brown fox jumps over the lazy dog.}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$\textbf{The quick brown fox jumps over the lazy dog.}$$&lt;/p&gt;
+
+&lt;h3 id=&#34;italic-text&#34;&gt;Italic text&lt;/h3&gt;
+
+&lt;p&gt;To make a text block italic, enclose it with a &lt;code&gt;\textit{}&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\textit{The quick brown fox jumps over the lazy dog.}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$\textit{The quick brown fox jumps over the lazy dog.}$$&lt;/p&gt;
+
+&lt;h3 id=&#34;monospaced-text&#34;&gt;Monospaced text&lt;/h3&gt;
+
+&lt;p&gt;In order for the text to be monospaced, enclose it with a &lt;code&gt;\texttt{}&lt;/code&gt; (text teletype) command.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\texttt{The quick brown fox jumps over the lazy dog.}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$\texttt{The quick brown fox jumps over the lazy dog.}$$&lt;/p&gt;
+
+&lt;h3 id=&#34;text-in-sans-serif-font-equivalent&#34;&gt;Text in sans-serif font equivalent&lt;/h3&gt;
+
+&lt;p&gt;Most importantly, you can make a text rendered in sans-serif with &lt;code&gt;\textsf{}&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\textsf{The quick brown fox jumps over the lazy dog.}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$\textsf{The quick brown fox jumps over the lazy dog.}$$&lt;/p&gt;
+
+&lt;h3 id=&#34;more-options&#34;&gt;More options&lt;/h3&gt;
+
+&lt;p&gt;You can see a lot more options from &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Fonts&#34;&gt;this reference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;math-formatting&#34;&gt;Math formatting&lt;/h2&gt;
+
+&lt;p&gt;This is what you mostly came for, right?&lt;/p&gt;
+
+&lt;p&gt;All righty then.
+Let&amp;rsquo;s see what MathJax in Markdown (M in M?) can do.&lt;/p&gt;
+
+&lt;h3 id=&#34;fractions&#34;&gt;Fractions&lt;/h3&gt;
+
+&lt;p&gt;For rendering fractions, you need to use the &lt;code&gt;\frac&lt;/code&gt; command.
+The command simply needs two positional arguments.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\frac{NUMERATOR}{DENOMINATOR}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For a bit of an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\frac{x_1 + y_2}{x_2 + y_1}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$ \frac{x_1 + y_2}{x_2 + y_1} $$&lt;/p&gt;
+
+&lt;h3 id=&#34;roots&#34;&gt;Roots&lt;/h3&gt;
+
+&lt;p&gt;In order to create roots, you need the &lt;code&gt;\sqrt&lt;/code&gt; command.
+It only needs the content to be put inside of it as the argument.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\sqrt{2a + b}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$ \sqrt{2a + b} $$&lt;/p&gt;
+
+&lt;p&gt;Yes, you can nest some stuff.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\sqrt{\frac{2a + b}{a^2 - b^2}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$ \sqrt{\frac{2a + b}{a^2 - b^2}} $$&lt;/p&gt;
+
+&lt;p&gt;You can specify an optional argument to change the magnitude.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\sqrt[\frac{1}{2}]{2a + b}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$ \sqrt[\frac{1}{2}]{2a + b} $$&lt;/p&gt;
+
+&lt;h3 id=&#34;superscripts&#34;&gt;Superscripts&lt;/h3&gt;
+
+&lt;p&gt;In order to make superscripts, place it next to a caret character (&lt;code&gt;^&lt;/code&gt;).
+To render it in more than one character, enclose it in curly brackets (&lt;code&gt;{}&lt;/code&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;2^2 * 2^{23} = 2^{25}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$2^2 * 2^{23} = 2^{25}$$&lt;/p&gt;
+
+&lt;p&gt;You can also nest it within a superscript like so.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;2^{2^{10}} * 2^{23^2} = \infty
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$ 2^{2^{10}} * 2^{23^2} = \infty $$&lt;/p&gt;
+
+&lt;p&gt;OK, I&amp;rsquo;ve gone overboard with the scale so I just put infinity as the
+answer instead.&lt;/p&gt;
+
+&lt;h3 id=&#34;subscripts&#34;&gt;Subscripts&lt;/h3&gt;
+
+&lt;p&gt;For making subscripts, place it next to the underscore (&lt;code&gt;_&lt;/code&gt;).
+Like the superscript command, if you include more than one character,
+enclose it in a pair of curly brackets (&lt;code&gt;{}&lt;/code&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;a_1 + a_2 + a_3 + ... + a_{14} = \frac{a_1 * a_{14}}{2}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$ a_1 + a_2 + a&lt;em&gt;3 + &amp;hellip; + a&lt;/em&gt;{14} = \frac{a&lt;em&gt;1 * a&lt;/em&gt;{14}}{2} $$&lt;/p&gt;
+
+&lt;p&gt;Wait&amp;hellip; That doesn&amp;rsquo;t look right.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s because in Markdown, underscores denote italics so
+be sure to escape them with a single backslash.&lt;/p&gt;
+
+&lt;p&gt;So now, the result is this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;a\_1 + a\_2 + a\_3 + ... + a\_{14} = \frac{a\_1 * a\_{14}}{2}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$ a_1 + a_2 + a_3 + &amp;hellip; + a_{14} = \frac{a_1 * a_{14}}{2} $$&lt;/p&gt;
+
+&lt;p&gt;Like superscripts and most of the commands, you can nest subscripts
+to another subscript (and other commands).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;a\_{2\_{1}} + a\_{2\_{2}} = b\_{2\_{1}} + b\_{2\_{2}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$ a_{2_{1}} + a_{2_{2}} = b_{2_{1}} + b_{2_{2}} $$&lt;/p&gt;
+
+&lt;h3 id=&#34;greek-letters&#34;&gt;Greek letters&lt;/h3&gt;
+
+&lt;p&gt;You can render Greek letters with the appropriate command.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;\alpha&lt;/code&gt; for lowercase Greek letter alpha,
+&lt;code&gt;\beta&lt;/code&gt; for lowercase Greek letter beta,
+&lt;code&gt;\gamma&lt;/code&gt; for lowercase Greek letter gamma,
+&lt;code&gt;\Gamma&lt;/code&gt; for uppercase Greek letter gamma,
+you get the point.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \varphi, \mu, \Phi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \varphi, \mu, \Phi$$&lt;/p&gt;
+
+&lt;h3 id=&#34;a-lot-more&#34;&gt;A lot more!&lt;/h3&gt;
+
+&lt;p&gt;You have a whole slew of mathematical symbols available.
+Please refer to &lt;a href=&#34;https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols&#34;&gt;this list of LaTeX mathematical symbols&lt;/a&gt;.
+Though I don&amp;rsquo;t know what&amp;rsquo;s missing symbols and whatnot (since I don&amp;rsquo;t MathJax often) but
+it should be enough.&lt;/p&gt;
+
+&lt;p&gt;You can also go to
+&lt;a href=&#34;https://math-on-quora.surge.sh/&#34;&gt;this web page that details using MathJax on Quora&lt;/a&gt;
+by Gilles Castel.
+It is specifically made for writing \(\LaTeX\) on Quora but it
+can be used as a general MathJax guide, anyways.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/asciidoctor-syntax-guide/</id>
+    <title type="text">Asciidoctor Syntax Guide</title>
+    <link rel="alternate" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/asciidoctor-syntax-guide/" hreflang="en" title="Asciidoctor Syntax Guide"/>
+    <category term="asciidoctor"/>
+    <category term="guide"/>
+    <published>2019-08-27T01:03:09+08:00</published>
+    <updated>2019-08-27T01:03:09+08:00</updated>
+    <content type="html">&lt;div id=&#34;preamble&#34;&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The main purpose of this article is to make sure that all
+basic HTML Elements are decorated with CSS so as to not miss
+any possible elements when creating new themes for Hugo.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_headings&#34;&gt;Headings&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Let&amp;#8217;s start with all possible headings.
+The HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent six levels of section headings.
+&lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level and &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_heading_2&#34;&gt;Heading 2&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_heading_3&#34;&gt;Heading 3&lt;/h3&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_heading_4&#34;&gt;Heading 4&lt;/h4&gt;
+&lt;div class=&#34;sect4&#34;&gt;
+&lt;h5 id=&#34;_heading_5&#34;&gt;Heading 5&lt;/h5&gt;
+&lt;div class=&#34;sect5&#34;&gt;
+&lt;h6 id=&#34;_heading_6&#34;&gt;Heading 6&lt;/h6&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_paragraph&#34;&gt;Paragraph&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;According to the &lt;a href=&#34;https://www.w3.org/TR/html5/dom.html=elements&#34;&gt;HTML5 specification&lt;/a&gt;
+by &lt;a href=&#34;https://www.w3.org/&#34;&gt;W3C&lt;/a&gt;, &lt;strong&gt;HTML documents consist of a tree of elements and text&lt;/strong&gt;.
+Each element is denoted in the source by a &lt;a href=&#34;https://www.w3.org/TR/html5/syntax.html=syntax-start-tags&#34;&gt;start tag&lt;/a&gt;,
+such as &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, and an &lt;a href=&#34;https://www.w3.org/TR/html5/syntax.html=syntax-end-tags&#34;&gt;end tag&lt;/a&gt;,
+such as &lt;code&gt;&amp;lt;/body&amp;gt;&lt;/code&gt;.
+(&lt;strong&gt;Certain start tags and end tags can in certain cases be omitted and are implied by other tags.&lt;/strong&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Elements can have attributes, which control how the elements work.
+For example, hyperlink are formed using the &lt;code&gt;a&lt;/code&gt; element and its &lt;code&gt;href&lt;/code&gt; attribute.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_list_types&#34;&gt;List Types&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_ordered_list&#34;&gt;Ordered List&lt;/h3&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;First item&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Second item&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Third item&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_unordered_list&#34;&gt;Unordered List&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;List item&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Another item&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;And another item&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_nested_list&#34;&gt;Nested list&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;First item&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Second item&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Second item First subitem&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Second item second subitem&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Second item Second subitem First sub-subitem&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Second item Second subitem Second sub-subitem&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Second item Second subitem Third sub-subitem&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Second item Third subitem&lt;/p&gt;
+&lt;div class=&#34;olist lowerroman&#34;&gt;
+&lt;ol class=&#34;lowerroman&#34; type=&#34;i&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Second item Third subitem First sub-subitem&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Second item Third subitem Second sub-subitem&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Second item Third subitem Third sub-subitem&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Third item&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_definition_list&#34;&gt;Definition List&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;HTML also supports definition lists.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;dlist&#34;&gt;
+&lt;dl&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Blanco tequila&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;The purest form of the blue agave spirit&amp;#8230;&amp;#8203;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt class=&#34;hdlist1&#34;&gt;Reposado tequila&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;Typically aged in wooden barrels for between two and eleven months&amp;#8230;&amp;#8203;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_blockquotes&#34;&gt;Blockquotes&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a &lt;code&gt;footer&lt;/code&gt; or &lt;code&gt;cite&lt;/code&gt; element, and optionally with in-line changes such as annotations and abbreviations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+Quoted text.
+This line is part of the same quote.
+Also you can &lt;em&gt;put&lt;/em&gt; &lt;strong&gt;Asciidoctor&lt;/strong&gt; into a blockquote.
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Blockquote with a citation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;My goal wasn&amp;#8217;t to make a ton of money. It was to build good computers. I only started the company when I realized I could be an engineer forever.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+&amp;#8212; Steve Wozniak
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;According to Mozilla&amp;#8217;s website, Firefox 1.0 was released in 2004 and became a big success.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_tables&#34;&gt;Tables&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Tables aren&amp;#8217;t part of the core Markdown spec, but Hugo supports them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&#34;tableblock frame-all grid-all stretch&#34;&gt;
+&lt;colgroup&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;ID&lt;/th&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Make&lt;/th&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Model&lt;/th&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Year&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;1&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Honda&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Accord&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;2009&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;2&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Toyota&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Camry&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;2012&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;3&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Hyundai&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Elantra&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;2010&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Colons can be used to align columns.&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&#34;tableblock frame-all grid-all stretch&#34;&gt;
+&lt;colgroup&gt;
+&lt;col style=&#34;width: 33.3333%;&#34;&gt;
+&lt;col style=&#34;width: 33.3333%;&#34;&gt;
+&lt;col style=&#34;width: 33.3334%;&#34;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Tables&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-center valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Are&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-right valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Cool&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;align: left&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-center valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;align: center&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-right valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;align: right&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;align: left&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-center valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;align: center&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-right valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;align: right&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;align: left&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-center valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;align: center&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-right valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;align: right&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can also use inline Markdown.&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&#34;tableblock frame-all grid-all stretch&#34;&gt;
+&lt;colgroup&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Inline&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Asciidoctor&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;In&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Table&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;em&gt;italics&lt;/em&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;mark&gt;mark&lt;/mark&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;code&gt;code&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_code&#34;&gt;Code&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&#34;en&#34;&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;meta charset=&#34;UTF-8&#34;&amp;gt;
+  &amp;lt;title&amp;gt;Example HTML5 Document&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;p&amp;gt;Test&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As you can see, content output from Asciidoctor does not have
+syntax highlighting.
+You can use the built-in Hugo shortcode instead.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+  &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;&amp;gt;
+  &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;Example HTML5 Document&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+  &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;Test&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_other_stuff_sub_sup_kbd_etc&#34;&gt;Other stuff — sub, sup, kbd, etc.&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;C&lt;sub&gt;6&lt;/sub&gt;H&lt;sub&gt;12&lt;/sub&gt;O&lt;sub&gt;6&lt;/sub&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Press kbd:[X] to win. Or press kbd:[kbd:[CTRL]+kbd:[ALT]+kbd:[F]] to show FPS counter.
+&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;mark&gt;As a unit of information in information theory, the bit has alternatively been called a shannon&lt;/mark&gt;, named after Claude Shannon, the founder of field of information theory.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. This requires &lt;a href=&#34;https://asciidoctor.org/docs/user-manual/#keyboard-shortcuts&#34;&gt;setting experimental flags enabled&lt;/a&gt;.
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/markdown-syntax-guide/</id>
+    <title type="text">Markdown Syntax Guide</title>
+    <link rel="alternate" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/markdown-syntax-guide/" hreflang="en" title="Markdown Syntax Guide"/>
+    <category term="markdown"/>
+    <category term="guide"/>
+    <published>2019-08-26T00:08:27+08:00</published>
+    <updated>2019-08-26T00:08:27+08:00</updated>
+    <content type="html">&lt;p&gt;The main purpose of this article is to make sure that all basic HTML Elements are decorated with CSS so as to not miss any possible elements when creating new themes for Hugo.&lt;/p&gt;
+
+&lt;h2 id=&#34;headings&#34;&gt;Headings&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start with all possible headings. The HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent six levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level and &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;
+
+&lt;h1 id=&#34;heading-1&#34;&gt;Heading 1&lt;/h1&gt;
+
+&lt;h2 id=&#34;heading-2&#34;&gt;Heading 2&lt;/h2&gt;
+
+&lt;h3 id=&#34;heading-3&#34;&gt;Heading 3&lt;/h3&gt;
+
+&lt;h4 id=&#34;heading-4&#34;&gt;Heading 4&lt;/h4&gt;
+
+&lt;h5 id=&#34;heading-5&#34;&gt;Heading 5&lt;/h5&gt;
+
+&lt;h6 id=&#34;heading-6&#34;&gt;Heading 6&lt;/h6&gt;
+
+&lt;h2 id=&#34;paragraph&#34;&gt;Paragraph&lt;/h2&gt;
+
+&lt;p&gt;According to the &lt;a href=&#34;https://www.w3.org/TR/html5/dom.html#elements&#34;&gt;HTML5 specification&lt;/a&gt; by &lt;a href=&#34;https://www.w3.org/&#34;&gt;W3C&lt;/a&gt;, &lt;strong&gt;HTML documents consist of a tree of elements and text&lt;/strong&gt;. Each element is denoted in the source by a &lt;a href=&#34;https://www.w3.org/TR/html5/syntax.html#syntax-start-tags&#34;&gt;start tag&lt;/a&gt;, such as &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, and an &lt;a href=&#34;https://www.w3.org/TR/html5/syntax.html#syntax-end-tags&#34;&gt;end tag&lt;/a&gt;, such as &lt;code&gt;&amp;lt;/body&amp;gt;&lt;/code&gt;. (&lt;em&gt;Certain start tags and end tags can in certain cases be omitted and are implied by other tags.&lt;/em&gt;)&lt;/p&gt;
+
+&lt;p&gt;Elements can have attributes, which control how the elements work. For example, hyperlink are formed using the &lt;code&gt;a&lt;/code&gt; element and its &lt;code&gt;href&lt;/code&gt; attribute.&lt;/p&gt;
+
+&lt;h2 id=&#34;list-types&#34;&gt;List Types&lt;/h2&gt;
+
+&lt;h3 id=&#34;ordered-list&#34;&gt;Ordered List&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;First item&lt;/li&gt;
+&lt;li&gt;Second item&lt;/li&gt;
+&lt;li&gt;Third item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;unordered-list&#34;&gt;Unordered List&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;List item&lt;/li&gt;
+&lt;li&gt;Another item&lt;/li&gt;
+&lt;li&gt;And another item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;nested-list&#34;&gt;Nested list&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;First item&lt;/li&gt;
+  &lt;li&gt;Second item
+    &lt;ul&gt;
+      &lt;li&gt;Second item First subitem&lt;/li&gt;
+      &lt;li&gt;Second item second subitem
+        &lt;ul&gt;
+          &lt;li&gt;Second item Second subitem First sub-subitem&lt;/li&gt;
+          &lt;li&gt;Second item Second subitem Second sub-subitem&lt;/li&gt;
+          &lt;li&gt;Second item Second subitem Third sub-subitem&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Second item Third subitem
+        &lt;ol&gt;
+          &lt;li&gt;Second item Third subitem First sub-subitem&lt;/li&gt;
+          &lt;li&gt;Second item Third subitem Second sub-subitem&lt;/li&gt;
+          &lt;li&gt;Second item Third subitem Third sub-subitem&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;definition-list&#34;&gt;Definition List&lt;/h3&gt;
+
+&lt;p&gt;HTML also supports definition lists.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Blanco tequila&lt;/dt&gt;
+  &lt;dd&gt;The purest form of the blue agave spirit...&lt;/dd&gt;
+  &lt;dt&gt;Reposado tequila&lt;/dt&gt;
+  &lt;dd&gt;Typically aged in wooden barrels for between two and eleven months...&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h2 id=&#34;blockquotes&#34;&gt;Blockquotes&lt;/h2&gt;
+
+&lt;p&gt;The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a &lt;code&gt;footer&lt;/code&gt; or &lt;code&gt;cite&lt;/code&gt; element, and optionally with in-line changes such as annotations and abbreviations.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Quoted text.
+This line is part of the same quote.
+Also you can &lt;em&gt;put&lt;/em&gt; &lt;strong&gt;Markdown&lt;/strong&gt; into a blockquote.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Blockquote with a citation.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;My goal wasn&#39;t to make a ton of money. It was to build good computers. I only started the company when I realized I could be an engineer forever.&lt;/p&gt;
+  &lt;footer&gt;— &lt;cite&gt;Steve Wozniak&lt;/cite&gt;&lt;/footer&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;According to Mozilla&amp;rsquo;s website, &lt;q cite=&#34;https://www.mozilla.org/en-US/about/history/details/&#34;&gt;Firefox 1.0 was released in 2004 and became a big success.&lt;/q&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;tables&#34;&gt;Tables&lt;/h2&gt;
+
+&lt;p&gt;Tables aren&amp;rsquo;t part of the core Markdown spec, but Hugo supports them.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ID&lt;/th&gt;
+&lt;th&gt;Make&lt;/th&gt;
+&lt;th&gt;Model&lt;/th&gt;
+&lt;th&gt;Year&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Honda&lt;/td&gt;
+&lt;td&gt;Accord&lt;/td&gt;
+&lt;td&gt;2009&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Toyota&lt;/td&gt;
+&lt;td&gt;Camry&lt;/td&gt;
+&lt;td&gt;2012&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;Hyundai&lt;/td&gt;
+&lt;td&gt;Elantra&lt;/td&gt;
+&lt;td&gt;2010&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Colons can be used to align columns.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Tables&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Are&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Cool&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;align: left&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;align: center&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;align: right&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;align: left&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;align: center&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;align: right&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;align: left&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;align: center&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;align: right&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;You can also use inline Markdown.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Inline&lt;/th&gt;
+&lt;th&gt;Markdown&lt;/th&gt;
+&lt;th&gt;In&lt;/th&gt;
+&lt;th&gt;Table&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;em&gt;italics&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;del&gt;strikethrough&lt;/del&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;code&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+  &amp;lt;title&amp;gt;Example HTML5 Document&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;p&amp;gt;Test&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+  &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;&amp;gt;
+  &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;Example HTML5 Document&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+  &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;Test&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;other-stuff-abbr-sub-sup-kbd-etc&#34;&gt;Other stuff — abbr, sub, sup, kbd, etc.&lt;/h2&gt;
+
+&lt;p&gt;&lt;abbr title=&#34;Graphics Interchange Format&#34;&gt;GIF&lt;/abbr&gt; is a bitmap image format.&lt;/p&gt;
+
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
+
+&lt;p&gt;C&lt;sub&gt;6&lt;/sub&gt;H&lt;sub&gt;12&lt;/sub&gt;O&lt;sub&gt;6&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;X&lt;sup&gt;n&lt;/sup&gt; + Y&lt;sup&gt;n&lt;/sup&gt; = Z&lt;sup&gt;n&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Press &lt;kbd&gt;X&lt;/kbd&gt; to win. Or press &lt;kbd&gt;&lt;kbd&gt;CTRL&lt;/kbd&gt;+&lt;kbd&gt;ALT&lt;/kbd&gt;+&lt;kbd&gt;F&lt;/kbd&gt;&lt;/kbd&gt; to show FPS counter.&lt;/p&gt;
+
+&lt;p&gt;&lt;mark&gt;As a unit of information in information theory, the bit has alternatively been called a shannon&lt;/mark&gt;, named after Claude Shannon, the founder of field of information theory.&lt;/p&gt;</content>
+  </entry>
+  
+  <entry>
+    <id>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/asciidoctor-article-template/</id>
+    <title type="text">Asciidoctor Article Template</title>
+    <link rel="alternate" href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/asciidoctor-article-template/" hreflang="en" title="Asciidoctor Article Template"/>
+    <category term="asciidoctor"/>
+    <category term="guide"/>
+    <published>2019-08-25T21:06:56+08:00</published>
+    <updated>2019-08-25T21:06:56+08:00</updated>
+    <content type="html">&lt;div id=&#34;preamble&#34;&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Content entered directly below the header but before the first section heading is called the preamble.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_first_level_heading&#34;&gt;First level heading&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This is a paragraph with a &lt;strong&gt;bold&lt;/strong&gt; word and an &lt;em&gt;italicized&lt;/em&gt; word.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;imageblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;img src=&#34;https://source.unsplash.com/random&#34; alt=&#34;I am the image alt text.&#34;&gt;
+&lt;/div&gt;
+&lt;div class=&#34;title&#34;&gt;Figure 1. Image caption&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This is another paragraph.&lt;sup class=&#34;footnote&#34;&gt;[&lt;a id=&#34;_footnoteref_1&#34; class=&#34;footnote&#34; href=&#34;#_footnotedef_1&#34; title=&#34;View footnote.&#34;&gt;1&lt;/a&gt;]&lt;/sup&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_second_level_heading&#34;&gt;Second level heading&lt;/h3&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Unordered list title&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;list item 1&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;nested list item&lt;/p&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;nested nested list item 1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;nested nested list item 2&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;list item 2&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;exampleblock&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Example 1. title&lt;/div&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Content in an example block is subject to normal substitutions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The test.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sidebarblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Sidebar title&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Sidebars contain aside text and are subject to normal substitutions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect3&#34;&gt;
+&lt;h4 id=&#34;_third_level_heading&#34;&gt;Third level heading&lt;/h4&gt;
+&lt;div id=&#34;id-for-listing-block&#34; class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Listing block title&lt;/div&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre&gt;Content in a listing block is subject to verbatim substitutions.
+Listing block content is commonly used to preserve code input.&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You could also do source code inputs with the following syntax.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;literalblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre&gt;[source,lang]
+----
+// source code here
+----&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect4&#34;&gt;
+&lt;h5 id=&#34;_fourth_level_heading&#34;&gt;Fourth level heading&lt;/h5&gt;
+&lt;table class=&#34;tableblock frame-all grid-all stretch&#34;&gt;
+&lt;caption class=&#34;title&#34;&gt;Table 1. Table title&lt;/caption&gt;
+&lt;colgroup&gt;
+&lt;col style=&#34;width: 50%;&#34;&gt;
+&lt;col style=&#34;width: 50%;&#34;&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Column heading 1&lt;/th&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Column heading 2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Column 1, row 1&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Column 2, row 1&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Column 1, row 2&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Column 2, row 2&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&#34;sect5&#34;&gt;
+&lt;h6 id=&#34;_fifth_level_heading&#34;&gt;Fifth level heading&lt;/h6&gt;
+&lt;div class=&#34;quoteblock&#34;&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;I am a block quote or a prose excerpt.
+I am subject to normal substitutions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+&amp;#8212; firstname lastname&lt;br&gt;
+&lt;cite&gt;movie title&lt;/cite&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;verseblock&#34;&gt;
+&lt;pre class=&#34;content&#34;&gt;I am a verse block.
+  Indents and endlines are preserved in verse blocks.&lt;/pre&gt;
+&lt;div class=&#34;attribution&#34;&gt;
+&amp;#8212; firstname lastname&lt;br&gt;
+&lt;cite&gt;poem title and more&lt;/cite&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_first_level_heading_2&#34;&gt;First level heading&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Tip&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+There are five admonition labels: Tip, Note, Important, Caution and Warning.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;olist arabic&#34;&gt;
+&lt;ol class=&#34;arabic&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;ordered list item&lt;/p&gt;
+&lt;div class=&#34;olist loweralpha&#34;&gt;
+&lt;ol class=&#34;loweralpha&#34; type=&#34;a&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;nested ordered list item&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ordered list item&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The text at the end of this sentence is cross referenced to &lt;a href=&#34;#_third_level_heading&#34;&gt;the third level heading&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_first_level_heading_3&#34;&gt;First level heading&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This is a link to the &lt;a href=&#34;https://asciidoctor.org/docs/user-manual/&#34;&gt;Asciidoctor User Manual&lt;/a&gt;.
+This is an attribute reference &lt;a href=&#34;https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/&#34;&gt;which links this text to the Asciidoctor Quick Reference Guide&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;footnotes&#34;&gt;
+&lt;hr&gt;
+&lt;div class=&#34;footnote&#34; id=&#34;_footnotedef_1&#34;&gt;
+&lt;a href=&#34;#_footnoteref_1&#34;&gt;1&lt;/a&gt;. I am footnote text and will be displayed at the bottom of the article.
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  
+</feed>

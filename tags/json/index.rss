@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>json on Arch Terminal</title>
+    <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/json/</link>
+    <description>Recent content in json on Arch Terminal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>johndodo@example.com (John Dodo)</managingEditor>
+    <webMaster>johndodo@example.com (John Dodo)</webMaster>
+    <copyright>Unless explicitly stated, all content released here are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0).</copyright>
+    <lastBuildDate>Wed, 04 Sep 2019 17:22:44 +0800</lastBuildDate>
+    <docs>https://cyber.harvard.edu/rss/rss.html</docs>
+    
+        <atom:link href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/json/index.rss" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>RSS, Atom, and JSON Feed Support</title>
+      <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/rss-atom-and-json-feed-support/</link>
+      <category>rss</category>
+      <category>atom</category>
+      <category>json</category>
+      <category>feeds</category>
+      <category>guide</category>
+      <pubDate>Wed, 04 Sep 2019 17:22:44 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/rss-atom-and-json-feed-support/</guid>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This theme supports RSS, Atom, and JSON feed output for more ways of publishing
+web content for your visitors.
+It is also suitable for reading content from feed readers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Here are the following documents used as references for the creation of the
+output feed templates.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://tools.ietf.org/html/rfc4287&#34;&gt;Atom 1.0 - IETF RFC4287&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://jsonfeed.org/version/1&#34;&gt;JSON Feed version 1 specifications&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://cyber.harvard.edu/rss/rss.html&#34;&gt;RSS 2.0 specifications&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In this demo, it is enabled and you should be able to see them through the
+following links:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;RSS&lt;/strong&gt;: &lt;a href=&#34;https://foo-dogsquared.github.io/hugo-theme-terminal-plus-minus-demo/index.rss&#34; class=&#34;bare&#34;&gt;https://foo-dogsquared.github.io/hugo-theme-terminal-plus-minus-demo/index.rss&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Atom&lt;/strong&gt;: &lt;a href=&#34;https://foo-dogsquared.github.io/hugo-theme-terminal-plus-minus-demo/index.atom&#34; class=&#34;bare&#34;&gt;https://foo-dogsquared.github.io/hugo-theme-terminal-plus-minus-demo/index.atom&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;JSON&lt;/strong&gt;: &lt;a href=&#34;https://foo-dogsquared.github.io/hugo-theme-terminal-plus-minus-demo/index.json&#34; class=&#34;bare&#34;&gt;https://foo-dogsquared.github.io/hugo-theme-terminal-plus-minus-demo/index.json&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For enabling output feeds, utilize the
+&lt;a href=&#34;https://gohugo.io/templates/output-formats&#34;&gt;output formats&lt;/a&gt; in your site configuration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you&amp;#8217;re settling with this option, here&amp;#8217;s an example template for enabling all of
+the feed formats.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;# Visit the following for more information:
+# https://gohugo.io/templates/output-formats
+
+# Defining the media type of the output formats
+# For JSON format, it doesn&#39;t need to be since it&#39;s already built-in into Hugo
+[mediaTypes]
+    [mediaTypes.&#34;application/atom+xml&#34;]
+        suffixes = [&#34;atom&#34;, &#34;atom.xml&#34;] # You can remove the &#34;atom.xml&#34; if you want
+
+    # Redefining RSS media type for the additional suffix
+    [mediaTypes.&#34;application/rss+xml&#34;]
+        suffixes = [&#34;rss&#34;, &#34;rss.xml&#34;] # You can remove the &#34;rss.xml&#34; if you want
+
+
+# Including all of the feed output formats in the build
+[outputFormats]
+    [outputFormats.Rss]
+        mediaType = &#34;application/rss+xml&#34;
+        baseName = &#34;index&#34;
+
+    [outputFormats.Atom]
+        mediaType = &#34;application/atom+xml&#34;
+        baseName = &#34;index&#34;
+
+# Indicating what output formats shall be included
+# for the following kinds
+[outputs]
+    # .Site.BaseURL/index.* is available
+    home = [&#34;HTML&#34;, &#34;JSON&#34;, &#34;RSS&#34;, &#34;ATOM&#34;]
+
+    # .Site.BaseURL/$section/index.* is available
+    section = [&#34;HTML&#34;, &#34;JSON&#34;, &#34;RSS&#34;, &#34;ATOM&#34;]&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>asciidoctor on Arch Terminal</title>
+    <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/categories/asciidoctor/</link>
+    <description>Recent content in asciidoctor on Arch Terminal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>johndodo@example.com (John Dodo)</managingEditor>
+    <webMaster>johndodo@example.com (John Dodo)</webMaster>
+    <copyright>Unless explicitly stated, all content released here are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0).</copyright>
+    <lastBuildDate>Thu, 29 Aug 2019 22:09:16 +0800</lastBuildDate>
+    <docs>https://cyber.harvard.edu/rss/rss.html</docs>
+    
+        <atom:link href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/categories/asciidoctor/index.rss" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>Asciidoctor Extended Syntax Guide</title>
+      <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/asciidoctor-extended-syntax-guide/</link>
+      <category>asciidoctor</category>
+      <category>guide</category>
+      <pubDate>Thu, 29 Aug 2019 22:09:16 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/asciidoctor-extended-syntax-guide/</guid>
+      <description>&lt;div id=&#34;preamble&#34;&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The purpose of this article to make sure not-so-common features of
+Asciidoctor (i.e. admonition blocks, callouts) are styled and
+fit to the theme.
+It also serves as a quick introduction to more Asciidoctor as well.
+Feel free to steal this if you want a template for this.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_admonition_blocks&#34;&gt;Admonition blocks&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Admonition blocks contain content that are not a part of the main
+content but you&amp;#8217;ll want to draw attention to the audience anyways.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;By default, Asciidoctor provides five labels for admonitions:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;ulist&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;TIP&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;NOTE&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;IMPORTANT&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;CAUTION&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;WARNING&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sidebarblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;&lt;code&gt;CAUTION&lt;/code&gt; vs &lt;code&gt;WARNING&lt;/code&gt;&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As the &lt;a href=&#34;https://asciidoctor.org/docs/user-manual/#admonition&#34;&gt;user manual&lt;/a&gt;
+has said, &lt;code&gt;CAUTION&lt;/code&gt; and &lt;code&gt;WARNING&lt;/code&gt; should be used with different semantics.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;code&gt;CAUTION&lt;/code&gt; basically advises the user to observe care.
+&lt;code&gt;WARNING&lt;/code&gt; warns the user about the dangers or consequences that&amp;#8217;ll exist.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Writing an admonition is intuitively easy, simply write the label
+in all uppercase and append with a colon.
+Then write the content after.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-asciidoc&#34; data-lang=&#34;asciidoc&#34;&gt;TIP: Lorem ipsum dolor sit amet consectetur adipiscing elit varius cursus
+orci nulla, fames nisl sodales scelerisque eu consequat sem imperdiet ac mi
+vivamus tempor, accumsan ad justo odio viverra praesent senectus class egestas duis.&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;It&amp;#8217;ll render as this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Tip&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+Lorem ipsum dolor sit amet consectetur adipiscing elit varius cursus
+orci nulla, fames nisl sodales scelerisque eu consequat sem imperdiet ac mi
+vivamus tempor, accumsan ad justo odio viverra praesent senectus class egestas duis.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In case you want to style the labels differently such as assigning
+appropriate colors or an icon to the rest of the labels,
+here&amp;#8217;s the rest of them:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Note&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+Malesuada mattis aenean ultrices netus cursus viverra vivamus ultricies,
+velit molestie penatibus phasellus in ante luctus, habitant suspendisse eros
+turpis taciti risus himenaeos.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock important&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Important&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+Velit fringilla feugiat nibh id faucibus scelerisque facilisis ac,
+suscipit quisque odio libero ullamcorper curabitur fames nascetur, elementum
+tristique hac nisl etiam dictumst dapibus.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock caution&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Caution&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+Tempus dui aptent tempor torquent lacinia sem cursus porta cras semper
+accumsan feugiat, himenaeos mi ullamcorper pharetra enim class eget auctor conubia
+metus curabitur.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock warning&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Warning&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+Aliquet ut maecenas mollis id enim nibh suscipit quisque posuere cum fusce,
+dignissim ad curabitur odio ac diam pharetra platea vivamus eleifend.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_callouts&#34;&gt;Callouts&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Callouts are used to add annotations within a verbatim block.
+This is especially useful for code listings in order to effectively explain what
+is going on within the code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Here&amp;#8217;s an example of using callouts.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-asciidoc&#34; data-lang=&#34;asciidoc&#34;&gt;[source,python]
+----
+from pathlib import Path
+from re import compile, match
+
+current_directory = Path(&#34;.&#34;) &amp;lt;1&amp;gt;
+notes_directory = current_directory / &#34;notes/&#34; &amp;lt;2&amp;gt;
+----
+&amp;lt;1&amp;gt; Created a Path object
+&amp;lt;2&amp;gt; Appending a Path object with &#34;/&#34;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;And it&amp;#8217;ll render as:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;from pathlib import Path
+from re import compile, match
+
+current_directory = Path(&#34;.&#34;) # &lt;b class=&#34;conum&#34;&gt;(1)&lt;/b&gt;
+notes_directory = current_directory / &#34;notes/&#34; # &lt;b class=&#34;conum&#34;&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;colist arabic&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Created a &lt;code&gt;Path&lt;/code&gt; object&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Appending a &lt;code&gt;Path&lt;/code&gt; object with &#34;/&#34;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;One of the most important you should style is the callout number
+on the code listings block.
+Normally, when a user wants to copy-paste (even though I don&amp;#8217;t personally
+encourage it), the callout number gets in the way and they have to
+manually remove them which can be annoying.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Either attach the property &lt;code&gt;user-select&lt;/code&gt; with it or take a part from the
+default Asciidoctor stylesheet and include it in your own stylesheet.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MathJax Support for Asciidoctor</title>
+      <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/mathjax-support-for-asciidoctor/</link>
+      <category>asciidoctor</category>
+      <category>mathjax</category>
+      <category>guide</category>
+      <pubDate>Wed, 28 Aug 2019 01:47:02 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/mathjax-support-for-asciidoctor/</guid>
+      <description>&lt;div id=&#34;preamble&#34;&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This is just an article for testing MathJax in Asciidoctor files.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can use this as a testing template for all of your LaTeX math needs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_basics&#34;&gt;Basics&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This should be an inline math content \(\LaTeX\) with the LaTeX symbol.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The following block content should contain a sentence with the LaTeX symbol.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\LaTeX\text{ is awesome.}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_whitespace&#34;&gt;Whitespace&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;LaTeX treats whitespace characters such as tabs and spaces uniformly as one unit
+of space.
+A text that is composed of two tabs and 10 spaces consecutively is one space.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This is especially prominent in math mode (which MathJax is&amp;#8230;&amp;#8203; always).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Try to render this, for example.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;This is a LaTeX sentence (or I guess in MathJax).&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;And it&amp;#8217;ll render as the following:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[ This is a LaTeX sentence (or I guess in MathJax).\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Since MathJax is in&amp;#8230;&amp;#8203; perpetual math mode and specifically made for rendering
+math formulae, we shouldn&amp;#8217;t have a problem with maintaining it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Just a heads up.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_commands&#34;&gt;Commands&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;One of the main syntax you should mind in MathJax are the LaTeX commands.
+Think of it like the HTML tags in LaTeX (although not really).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Here&amp;#8217;s the basic construct of a LaTeX command:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\commandname[option1,option2,...]{argument1}{argument2}...&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Within commands and if allowed, you can nest commands.
+Take this example for example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\sum_{i=0}^{6} = \frac{i^{2}}{ 2 \bmod (i * 4)} + i^{3}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[ \sum_{i=0}^{6} = \frac{i^{2}}{ 2 \bmod (i * 4)} + i^{3}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_reserved_characters&#34;&gt;Reserved characters&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The following characters have special meaning to LaTeX.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code&gt;# $ % ^ &amp;amp; _ { } ~ \&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[# $ % ^ &amp;amp; _ { } ~ \\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As you can see, it should result in an error or not rendered
+properly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In order to render them in text, you need to add an escape character.
+In this case, it&amp;#8217;s a backslash.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\# \$ \% \^ \&amp;amp; \_ \{ \} \~ \\&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\# \$ \% \^{} \&amp;amp; \_ \{ \} \~{} \textbackslash{}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;admonitionblock note&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Note&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+Some of them may not render properly due to MathJax lack of support for
+the following. (We don&amp;#8217;t really need those when using MathJax anyway)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_text_formatting&#34;&gt;Text formatting&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can do a little text formatting in a LaTeX math content (though it&amp;#8217;s pointless
+to do so).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_literal_text&#34;&gt;Literal text&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can make a text with &lt;code&gt;\text{}&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\text{The quick brown fox jumps over the lazy dog.}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\text{The quick brown fox jumps over the lazy dog.}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_boldface_text&#34;&gt;Boldface text&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can make a text boldface with &lt;code&gt;\textbf{}&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\textbf{The quick brown fox jumps over the lazy dog.}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\textbf{The quick brown fox jumps over the lazy dog.}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_italic_text&#34;&gt;Italic text&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;To make a text block italic, enclose it with a &lt;code&gt;\textit{}&lt;/code&gt; command.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\textit{The quick brown fox jumps over the lazy dog.}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\textit{The quick brown fox jumps over the lazy dog.}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_monospaced_text&#34;&gt;Monospaced text&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In order for the text to be monospaced, enclose it with a &lt;code&gt;\texttt{}&lt;/code&gt; (text teletype) command.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\texttt{The quick brown fox jumps over the lazy dog.}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\texttt{The quick brown fox jumps over the lazy dog.}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_text_in_sans_serif_font_equivalent&#34;&gt;Text in sans-serif font equivalent&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Most importantly, you can make a text rendered in sans-serif with &lt;code&gt;\textsf{}&lt;/code&gt; command.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\textsf{The quick brown fox jumps over the lazy dog.}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\textsf{The quick brown fox jumps over the lazy dog.}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_more_options&#34;&gt;More options&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can see a lot more options from &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Fonts&#34;&gt;this reference&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_math_formatting&#34;&gt;Math formatting&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This is what you mostly came for, right?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;All righty then.
+Let&amp;#8217;s see what MathJax in Asciidoctor (M in A?) can do.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_fractions&#34;&gt;Fractions&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For rendering fractions, you need to use the &lt;code&gt;\frac&lt;/code&gt; command.
+The command simply needs two positional arguments.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\frac{NUMERATOR}{DENOMINATOR}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For a bit of an example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\frac{x_1 + y_2}{x_2 + y_1}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\frac{x_1 + y_2}{x_2 + y_1}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_roots&#34;&gt;Roots&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In order to create roots, you need the &lt;code&gt;\sqrt&lt;/code&gt; command.
+It only needs the content to be put inside of it as the argument.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\sqrt{2a + b}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\sqrt{2a + b}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Yes, you can nest some stuff.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\sqrt{\frac{2a + b}{a^2 - b^2}}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\sqrt{\frac{2a + b}{a^2 - b^2}}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can specify an optional argument to change the magnitude.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\sqrt[\frac{1}{2}]{2a + b}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\sqrt[\frac{1}{2}]{2a + b}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_superscripts&#34;&gt;Superscripts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In order to make superscripts, place it next to a caret character (&lt;code&gt;^&lt;/code&gt;).
+To render it in more than one character, enclose it in curly brackets (&lt;code&gt;{}&lt;/code&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;2^2 * 2^{23} = 2^{25}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[2^2 * 2^{23} = 2^{25}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can also nest it within a superscript like so.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;2^{2^{10}} * 2^{23^2} = \infty&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[ 2^{2^{10}} * 2^{23^2} = \infty\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;OK, I&amp;#8217;ve gone overboard with the scale so I just put infinity as the
+answer instead.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_subscripts&#34;&gt;Subscripts&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;For making subscripts, place it next to the underscore (&lt;code&gt;_&lt;/code&gt;).
+Like the superscript command, if you include more than one character,
+enclose it in a pair of curly brackets (&lt;code&gt;{}&lt;/code&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;a_1 + a_2 + a_3 + ... + a_{14} = \frac{a_1 * a_{14}}{2}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[a_1 + a_2 + a_3 + ... + a_{14} = \frac{a_1 * a_{14}}{2}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Like superscripts and most of the commands, you can nest subscripts
+to another subscript (and other commands).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;a_{2_{1}} + a_{2_{2}} = b_{2_{1}} + b_{2_{2}}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[ a_{2_{1}} + a_{2_{2}} = b_{2_{1}} + b_{2_{2}}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_greek_letters&#34;&gt;Greek letters&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can render Greek letters with the appropriate command.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;&lt;code&gt;\alpha&lt;/code&gt; for lowercase Greek letter alpha,
+&lt;code&gt;\beta&lt;/code&gt; for lowercase Greek letter beta,
+&lt;code&gt;\gamma&lt;/code&gt; for lowercase Greek letter gamma,
+&lt;code&gt;\Gamma&lt;/code&gt; for uppercase Greek letter gamma,
+you get the point.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \varphi, \mu, \Phi&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \varphi, \mu, \Phi\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_mathematical_sizing&#34;&gt;Mathematical sizing&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Oftentimes, you might need to align and resize certain characters like
+the parenthesis or the brackets that enclose a formula or an example.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can use the &lt;code&gt;\left&lt;/code&gt;, &lt;code&gt;\right&lt;/code&gt;, and &lt;code&gt;\middle&lt;/code&gt; commands to resize
+the delimiters.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\left(\frac{x^2}{y^3}\right)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\left(\frac{x^2}{y^3}\right)\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Since curly braces have semantic meaning to \(\LaTeX\), you need to
+escape it.
+Pretty much, it&amp;#8217;ll look like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;\left\{\frac{x^2}{y^3}\right\}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\left\{\frac{x^2}{y^3}\right\}\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect2&#34;&gt;
+&lt;h3 id=&#34;_a_lot_more&#34;&gt;A lot more!&lt;/h3&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You have a whole slew of mathematical symbols available.
+Please refer to
+&lt;a href=&#34;https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols&#34;&gt;this list of LaTeX mathematical symbols&lt;/a&gt;.
+Though I don&amp;#8217;t know what&amp;#8217;s missing symbols and whatnot (since I don&amp;#8217;t MathJax often) but
+it should be enough.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;You can also go to
+&lt;a href=&#34;https://math-on-quora.surge.sh/&#34;&gt;this web page that details using MathJax on Quora&lt;/a&gt;
+by Gilles Castel.
+It is specifically made for writing \(\LaTeX\) on Quora but it
+can be used as a general MathJax guide, anyways.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

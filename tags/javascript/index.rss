@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on Arch Terminal</title>
+    <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/javascript/</link>
+    <description>Recent content in javascript on Arch Terminal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>johndodo@example.com (John Dodo)</managingEditor>
+    <webMaster>johndodo@example.com (John Dodo)</webMaster>
+    <copyright>Unless explicitly stated, all content released here are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0).</copyright>
+    <lastBuildDate>Tue, 10 Sep 2019 15:26:52 +0800</lastBuildDate>
+    <docs>https://cyber.harvard.edu/rss/rss.html</docs>
+    
+        <atom:link href="https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/tags/javascript/index.rss" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>Adding Your Own JS Libraries</title>
+      <link>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/adding-your-own-js-libraries/</link>
+      <category>javascript</category>
+      <category>guide</category>
+      <pubDate>Tue, 10 Sep 2019 15:26:52 +0800</pubDate>
+      <author>johndodo@example.com (John Dodo)</author>
+      <guid>https://foo-dogsquared.github.io/hugo-theme-arch-terminal-demo/articles/adding-your-own-js-libraries/</guid>
+      <description>&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_adding_it_sitewide&#34;&gt;Adding it sitewide&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;This theme allows you to quickly include your own set of third-party
+(or your own) libraries on the whole site by providing a
+&lt;a href=&#34;https://gohugo.io/templates/data-templates/#data-files-in-themes&#34;&gt;data file&lt;/a&gt;
+named &lt;code&gt;libraries&lt;/code&gt; (i.e. &lt;code&gt;libraries.json&lt;/code&gt;, &lt;code&gt;libraries.yaml&lt;/code&gt;, &lt;code&gt;libraries.toml&lt;/code&gt;)
+in your data folder.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;The data &lt;code&gt;libraries&lt;/code&gt; should hold a list of objects with specific keys.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Here&amp;#8217;s the keys/fields that the theme looks for:&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&#34;tableblock frame-all grid-all stretch&#34;&gt;
+&lt;colgroup&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;col style=&#34;width: 25%;&#34;&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Key&lt;/th&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Data type&lt;/th&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Description&lt;/th&gt;
+&lt;th class=&#34;tableblock halign-left valign-top&#34;&gt;Optional&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;code&gt;type&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;string&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Describes whether it&amp;#8217;s a CSS or JS library.
+Only accepts possible values: &lt;code&gt;js&lt;/code&gt; and &lt;code&gt;css&lt;/code&gt;.&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;code&gt;url&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;string&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;The URL of the script to be referred.
+Accepts absolute URL (such as CDN links) and relative
+links (such as the scripts in the static folder).&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;code&gt;weight&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;number&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Indicates the precedence of the script.
+The less weight value, the higher the precedence so any
+important scripts should have the least weight value.&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;code&gt;sync&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;boolean&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Includes the script to be a part of the DOM rendering,
+bringing down the
+&lt;a href=&#34;https://developers.google.com/web/fundamentals/performance/rail#ux&#34;&gt;perceived page performance&lt;/a&gt;.&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Yes&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;&lt;code&gt;defer&lt;/code&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;boolean&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Makes the script to be deferred.
+Once the field value is &lt;code&gt;true&lt;/code&gt;, the script will be deferred no matter what.&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&#34;tableblock halign-left valign-top&#34;&gt;&lt;p class=&#34;tableblock&#34;&gt;Yes&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;As you might tell, the scripts will be delivered asynchronously (with the
+&lt;code&gt;async&lt;/code&gt; attribute) by default.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;If you want finer control with how the scripts are delivered, I recommend
+to modify the script partial (at &lt;code&gt;theme/$THEME_NAME/layouts/partials/script.html&lt;/code&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;sect1&#34;&gt;
+&lt;h2 id=&#34;_adding_scripts_for_a_specific_post&#34;&gt;Adding scripts for a specific post&lt;/h2&gt;
+&lt;div class=&#34;sectionbody&#34;&gt;
+&lt;div class=&#34;admonitionblock tip&#34;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class=&#34;icon&#34;&gt;
+&lt;div class=&#34;title&#34;&gt;Tip&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=&#34;content&#34;&gt;
+If you plan on future-proofing your content, I recommend to
+embed it on the document itself than relying on the frontmatter since this is
+a theme-specific feature and may present some problems if you migrate it somewhere else.
+For Markdown, you can simply write raw HTML with it.
+On Asciidoctor, you can simply embed it with a
+&lt;a href=&#34;https://asciidoctor.org/docs/user-manual/#passthroughs&#34;&gt;passthrough block&lt;/a&gt;.
+You also gain finer control on embedding your scripts this way.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;In order to add specific JS libraries, you need the &lt;code&gt;libs&lt;/code&gt; object in the frontmatter.
+It should hold an object named &lt;code&gt;js&lt;/code&gt; where it holds an array of URLs of the libraries.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Let&amp;#8217;s say you&amp;#8217;re writing a post on &lt;a href=&#34;https://p5js.org/&#34;&gt;p5.js&lt;/a&gt;.
+You can include it in the frontmatter like the following:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;listingblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;---
+title: &#34;Trying out p5.js&#34;
+date: 2019-09-10T15:26:52+08:00
+
+libs:
+    js:
+        - https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js
+---&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Take note that scripts loaded this way are executed first before the sitewide libraries and
+linked with &lt;code&gt;async&lt;/code&gt; attribute.
+If you want finer control, I recommend to embed them into the document itself.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
